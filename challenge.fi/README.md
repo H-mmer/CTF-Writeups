@@ -175,7 +175,7 @@ We were able to extract a picture from their private messaging platform, where t
 This picture reveals the location that will be struck next with a cyber attack...
 You need to help us to determine where this picture was taken so we can stop them, before they strike!
 ```
-Let's download the picture and load it on my favorite [online exiftool](http://exif.regex.info/exif.cgi). It gave us a [Location](http://maps.google.com/maps?f=q&q=loc:36.112500,-115.172056&t=k&spn=0.5,0.5) so let's try Las Vegas as the flag. It works!
+Let's download the [picture](./OSINT/a.jpg) and load it on my favorite [online exiftool](http://exif.regex.info/exif.cgi). It gave us a [Location](http://maps.google.com/maps?f=q&q=loc:36.112500,-115.172056&t=k&spn=0.5,0.5) so let's try Las Vegas as the flag. It works!
 #### 3.9 Where was this picture taken? 2/4
 ```
 With your help, we were able to thwart the plans of the cyber criminal gang.
@@ -183,20 +183,20 @@ With your help, we were able to thwart the plans of the cyber criminal gang.
 However, they are ready to strike again! Can you please help us find them again!
 Look at the picture, and search internet where it could have been taken!
 ```
-Let's do the same again, download the picture and load it in the [online exiftool](http://exif.regex.info/exif.cgi). It gives us a [Location](https://www.google.com/maps/place/53%C2%B048'34.2%22N+3%C2%B003'11.4%22W/@53.809497,-3.0553557,620m/data=!3m2!1e3!4b1!4m5!3m4!1s0x0:0x0!8m2!3d53.809497!4d-3.053167) again, let's scroll up a bit a see where we are. Seems like we're in Blackpool UK. Let's try Blackpool as the flag. It works!
+Let's do the same again, download the [picture](./OSINT/b.jpg) and load it in the [online exiftool](http://exif.regex.info/exif.cgi). It gives us a [Location](https://www.google.com/maps/place/53%C2%B048'34.2%22N+3%C2%B003'11.4%22W/@53.809497,-3.0553557,620m/data=!3m2!1e3!4b1!4m5!3m4!1s0x0:0x0!8m2!3d53.809497!4d-3.053167) again, let's scroll up a bit a see where we are. Seems like we're in Blackpool UK. Let's try Blackpool as the flag. It works!
 #### 3.10 Where was this picture taken? 3/4
 ```
 The cyber criminal gang doesn't seem to know when to stop...
 Here's another location for an attack! Please help us!
 ```
-Let's do the same again, download the picture and load it in the [online exiftool](http://exif.regex.info/exif.cgi). It gives us a [Location](https://www.google.com/maps/place/48%C2%B051'30.1%22N+2%C2%B017'40.1%22E/@48.858356,2.2922923,691m/data=!3m2!1e3!4b1!4m5!3m4!1s0x0:0x0!8m2!3d48.858356!4d2.294481) and there we go it's in Paris France.
+Let's do the same again, download the [picture](./OSINT/c.jpg) and load it in the [online exiftool](http://exif.regex.info/exif.cgi). It gives us a [Location](https://www.google.com/maps/place/48%C2%B051'30.1%22N+2%C2%B017'40.1%22E/@48.858356,2.2922923,691m/data=!3m2!1e3!4b1!4m5!3m4!1s0x0:0x0!8m2!3d48.858356!4d2.294481) and there we go it's in Paris France.
 #### 3.11 Where was this picture taken? 4/4
 ```
 Based on your previous analysis, we ran an initial check on this picture...
 But it seems like the cyber criminal gang is getting more cunning.
 This one will be more difficult! But if we can find them this one last time, we can surely stop them for good!
 ```
-Let's do the same again, download the picture and load it in the [online exiftool](http://exif.regex.info/exif.cgi). It gives us a [Location](https://www.google.com/maps?f=q&q=loc:31.355983,74.184744&t=k&spn=0.5,0.5) and there we go it's in Lahore Pakistan.
+Let's do the same again, download the [picture](./OSINT/d.jpg) and load it in the [online exiftool](http://exif.regex.info/exif.cgi). It gives us a [Location](https://www.google.com/maps?f=q&q=loc:31.355983,74.184744&t=k&spn=0.5,0.5) and there we go it's in Lahore Pakistan.
 # 4. Binary
 #### 4.1 Enter the world of binary
 ```
