@@ -1419,13 +1419,19 @@ http://hacklogin.challenge.fi/
 ```
 We got ourselves a website, lets take a look.
 ![hacklogin_index](./web/hacklogin_index.png)
+
 So its a webform, lets try some basic default passwords (12345, admin, admin123, P4ssw0rd etc.) with user `admin`. Nothing seems to be working. What about the Forgot your password? link. Lets see where that leads us. It takes us to https://hacklogin.challenge.fi/password-recovery.php and it only requires username. Lets try with the user admin.
+
 ![recovery_mail](./web/recovery_mail.png)
+
 Well that didn't help much... I've read about SQL Injection being used in login forms, maybe we can use this?
 Lets try to input `' or '' = '` into username and password on the login page.
+
 ![usernotfound](./web/usernotfound.png)
+
 Guess it doesn't work here. What if we try it on the password recovery page?
 ![allusersexposed](./web/allusersexposed.png)
+
 Seems like it works! Lets use our trusted program from SQL Injections called [sqlmap](http://sqlmap.org/).
 Lets run this `sqlmap -u https://hacklogin.challenge.fi/password-recovery.php --data "username=admin" --threads 10 --batch -dbs`
 ![dbfound](./web/dbfound.png)
