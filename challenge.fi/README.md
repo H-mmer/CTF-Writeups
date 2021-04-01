@@ -972,6 +972,7 @@ bash-5.0$ cat base.html
 ```
 Still remember our hint for the challenge? Thats a S3 Bucket address. Lets take a look at it.
 ![s3bucket_response](./cloud/s3bucket.png)
+
 Looks like we found ourselves a flag!
 ```
 $ curl https://frk-bucket-challenge-1234.s3.amazonaws.com/settings/stuff/flag.txt
@@ -1254,9 +1255,9 @@ reservation-id
 security-groups
 services/
 ```
-AMI = Amazon Machine Images ---- not what we're looking for
-IAM = Identity and Access Management  ---- sounds a bit more interesting
-Lets take a dive into iam
+> AMI = Amazon Machine Images ---- not what we're looking for
+  IAM = Identity and Access Management  ---- sounds a bit more interesting
+  Lets take a dive into iam
 ```
 $ curl http://169.254.169.254/latest/meta-data/iam/
 info
