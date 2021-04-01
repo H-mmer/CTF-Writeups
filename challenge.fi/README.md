@@ -393,8 +393,10 @@ png:= 1
 
 Foremost finished at Tue Mar 30 15:24:16 2021
 ```
-And there we go we have 2 pictures. `00000000.jpg` is the picture of Eiffel Tower and `00003663.png` is the famous landmark. Let's take a look at that new picture 
+And there we go we have 2 pictures. `00000000.jpg` is the picture of Eiffel Tower and `00003663.png` is the famous landmark. Let's take a look at that new picture.
+
 ![angel_of_the_north](./steganography/00003663.png)
+
 Looks like a statue with plane wings. Lets do a google search for exactly [that](https://letmegooglethat.com/?q=Statue+with+plane+wings) and there we go The Angel of the North is our famous landmark and our flag.
 # 6. Crypto
 #### 6.1 Catch the criminal 1
@@ -564,7 +566,9 @@ $ strings -n 7 -t x encode
 Nothing whatsoever, hmmm.. Lets open it up in [Cutter](https://cutter.re/) again and enable analysis (aaa) and write mode.
 From the functions panel we want to double-click that "main" function and look at it in the Dissassembly view. Looking at this kinda reminds us about the previous challenge. So we scroll down and we stop at `lea rdx, xkey ; 0x4010` xkey looks like a string let's double-click it and we get here
 ![xkey](./crypto/crypto2/xkey.png)
+
 Let's look at this address in hexdump ![hexdump](./crypto/crypto2/hexdump.png)
+
 Now that look like something we might use. Starting from 0x00004010 we can see 16 bytes that are being used as the keys to encrypt the data. So lets try using those.
 ```
 $ ./decode plain_text.encrypted plain_text.decrypted
