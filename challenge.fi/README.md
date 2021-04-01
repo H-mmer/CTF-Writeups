@@ -56,6 +56,7 @@ Rules flag is located inside the rules. Once you've read them you see the flag.
     This is the flag, but its encrypted. Well, nothing can be done about it...
     RkxBR3tMb29rc19yZWFsbHlfY3J5cHRpY19idXRfaXNfZWFzaWx5X3JldmVyc2VkfQ==
 Our first challenge is to decrypt that string. We see the string is base64 encoded so we use basic linux terminal and decode it.
+
 `echo RkxBR3tMb29rc19yZWFsbHlfY3J5cHRpY19idXRfaXNfZWFzaWx5X3JldmVyc2VkfQ== | base64 -d`
 
 #### 2.2 Basic Ciphers
