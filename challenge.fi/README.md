@@ -269,7 +269,7 @@ Thou fool! Thy must learn thy lessons better! Bits have not been manipulated cor
 ```
 Aha! seems like we need to do some reversing on this executable. Lets fire up [Cutter](https://cutter.re/) and load the file in with Analysis Enabled (level aaa) and Write enabled. Let's jump into `Graph(entry0)` to look at what we're dealing with.
 ![analysis](./binary/analysis.png)
-As you can see from the above picture the `cmp rax, 0xb` instruction checks if the given password is 11 characters long. If it's not we take the fork to the right and we know what happens there. You can try this by giving any characters as long as there are 11. So the thing we need to focus on is that other fork and there we follow it until `jne 0x100000e10` this is the part we want to reverse so we do a right click on the instruction and go to Edit > Reverse jump and tadaa it changes to `je 0x100000e10`
+As you can see from the above picture the `cmp rax, 0xb` instruction checks if the given password is 11 characters long. If it's not we take the fork to the right and we know what happens there. You can try this by giving any characters as long as there are 11. So the thing we need to focus on is that other fork and there we follow it until `jne 0x100000e10` this is the part we want to reverse so we do a right click on the instruction and go to `Edit > Reverse jump` and tadaa it changes to `je 0x100000e10`
 
 ![reverse_the_jump](./binary/reverse_jump.png)
 
@@ -290,7 +290,9 @@ This picture seems interesting...
 Can you find a secret location in this picture?
 ```
 Let's download the picture and load it on my favorite [online exiftool](http://exif.regex.info/exif.cgi). And it gives us a thumbnail picture
+
 ![london](./steganography/london.jpg)
+
 Looks rather familiar doesn't it? It's the world famous London Eye, but since we were asked what's the secret location we use London as the flag and it works!
 #### 5.2 What's in this picture? 2/2
 ```
@@ -309,7 +311,7 @@ This tells us there is at least a second picture in there in `.png` format. Lets
 ```
 $ binwalk -Me c.jpg
 Scan Time:     2021-03-30 15:14:56
-Target File:   /home/kali//Downloads/c.jpg
+Target File:   /home/kali/Downloads/c.jpg
 MD5 Checksum:  f262ae8b21e4e996ecfb2d58ef0a7e5f
 Signatures:    391
 
@@ -324,7 +326,7 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 
 
 Scan Time:     2021-03-30 15:14:56
-Target File:   /home/kali//Downloads/_c.jpg.extracted/1CA048
+Target File:   /home/kali/Downloads/_c.jpg.extracted/1CA048
 MD5 Checksum:  eeef5cb5b45f412a0135c5f6fa10ab2a
 Signatures:    391
 
@@ -334,7 +336,7 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 
 
 Scan Time:     2021-03-30 15:14:56
-Target File:   /home/kali//Downloads/_c.jpg.extracted/1CAAB8
+Target File:   /home/kali/Downloads/_c.jpg.extracted/1CAAB8
 MD5 Checksum:  7276dd733fd4f5f99b7704d0382a7aca
 Signatures:    391
 
@@ -355,8 +357,10 @@ drwxrwxrwx root root   512 B  Tue Mar 30 15:14:57 2021  ..
 .rwxrwxrwx root root 117.7 KB Tue Mar 30 15:14:57 2021  1CAAB8.zlib
 ```
 We have some odd format files in there. File command tells us something new.
+
 first file: `1CA048: Microsoft color profile 2.1, type Lino, RGB/XYZ-mntr device, IEC/sRGB model by HP, 3144 bytes, 9-2-1998 6:49:00, relative colorimetric "sRGB IEC61966-2.1"`
 second file:`1CAAB8: Tower/XP rel 2 object not stripped`
+
 This doesn't tell us much, maybe we're off the tracks here. Let's try some different program to extract data with like [foremost](https://github.com/jonstewart/foremost.git)
 ```
 foremost -i c.jpg -o foremost/c.jpg/ -v
