@@ -1255,9 +1255,11 @@ reservation-id
 security-groups
 services/
 ```
-> AMI = Amazon Machine Images ---- not what we're looking for
-  IAM = Identity and Access Management  ---- sounds a bit more interesting
-  Lets take a dive into iam
+AMI = Amazon Machine Images ---- not what we're looking for
+
+IAM = Identity and Access Management  ---- sounds a bit more interesting
+
+Lets take a dive into iam
 ```
 $ curl http://169.254.169.254/latest/meta-data/iam/
 info
