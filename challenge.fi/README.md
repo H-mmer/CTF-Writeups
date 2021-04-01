@@ -1490,15 +1490,18 @@ They said the vulnerability was called something like SSRF or something. I have 
 ```
 Lets do a google search for known vulnerabilities. Lets type in `hack-md vulnerabilities` and see the results.
 After following some pages we endup in [github](https://github.com/hackmdio/codimd/issues/1263) where we have issue raised because Hack-MD has `Open redirect / XSS via iframe with sandbox` it has steps how to reproduce the problem so lets try it out.
+
 First we press `New` in the hack-md page to create a fresh note. Then we use the steps:
  1. Type `<iframe src="https://exec.ga/hackmd.html" sandbox="allow-scripts allow-top-navigation allow-scripts"></iframe>` in Editor.
  2. View edited page.
 Lets edit that site to something we can use like https://hack-md.challenge.fi
 ![iframeredirect](./web/iframeredirect.png)
+
 Seems to be working. No we can try to extract the file from the server using `file://` in the `src=` section.
 ![noflag](./web/noflag.png)
 Hmmm doesn't seem to be working right off the bat. Should we try exporting to PDF? could that be the trick. Lets try it.
 We write `/pdf` in our [url](https://hack-md.challenge.fi/Ty_qf4mCRImlxSOzzY2FTg/pdf) and download the PDF file.
+
 ![flagfound](./web/flagfound.png)
 
 #### 9.5 Aapoweb
