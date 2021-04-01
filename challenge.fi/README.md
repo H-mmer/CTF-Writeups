@@ -1428,8 +1428,8 @@ Well that didn't help much... I've read about SQL Injection being used in login 
 Lets try to input `' or '' = '` into username and password on the login page.
 
 ![usernotfound](./web/usernotfound.png)
-
 Guess it doesn't work here. What if we try it on the password recovery page?
+
 ![allusersexposed](./web/allusersexposed.png)
 
 Seems like it works! Lets use our trusted program from SQL Injections called [sqlmap](http://sqlmap.org/).
