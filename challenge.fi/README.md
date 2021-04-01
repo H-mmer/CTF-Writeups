@@ -1673,7 +1673,7 @@ You can find the challenge from: http://securelogin.challenge.fi:8880/
 
 Note: This challenge is based on a real world example of a finding from a bug bounty target. Pretty much 1=1, but some clues maybe around what to do...
 ```
-This one was actually very difficult, no hits whatsoever. No indication where to begin except the website. Took me over 2 days to figure this one out, but I'll try to keep it short.
+This one was actually very difficult, no hints whatsoever. No indication where to begin except the website. Took me over 2 days to figure this one out, but I'll try to keep it short.
 First I started by going to the website annd we get greeted with this:
 ![spongebob]./web/(spongebob.png)
 So I figure i'd check the source using `view-source:` and we got this!
