@@ -270,7 +270,9 @@ Thou fool! Thy must learn thy lessons better! Bits have not been manipulated cor
 Aha! seems like we need to do some reversing on this executable. Lets fire up [Cutter](https://cutter.re/) and load the file in with Analysis Enabled (level aaa) and Write enabled. Let's jump into `Graph(entry0)` to look at what we're dealing with.
 ![analysis](./binary/analysis.png)
 As you can see from the above picture the `cmp rax, 0xb` instruction checks if the given password is 11 characters long. If it's not we take the fork to the right and we know what happens there. You can try this by giving any characters as long as there are 11. So the thing we need to focus on is that other fork and there we follow it until `jne 0x100000e10` this is the part we want to reverse so we do a right click on the instruction and go to Edit > Reverse jump and tadaa it changes to `je 0x100000e10`
+
 ![reverse_the_jump](./binary/reverse_jump.png)
+
 Now lets run the executable again and enter the password from before.
 ```
 $ ld-mac level2.out
