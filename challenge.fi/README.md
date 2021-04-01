@@ -1521,12 +1521,14 @@ Hints:
  6. Maybe the better question is. Does it matter who has issued the certificate? https://en.wikipedia.org/wiki/OpenSSL
 ```
 Lets focus on the task at hand. Load up the [website](https://aapoweb.challenge.fi:8008/) and we'll see what we're dealing with. After loading the site we get a security warning saying the connection is not safe.
-![selfsignedcert](./web/selfsignedcert.png) 
+![selfsignedcert](./web/selfsignedcert.png)
+
 we press Accept the risk and Continue and we get here:
 
 ![notaapo](./web/notaapo.png)
 
-Uhhuh, so we need to identify ourselves to the website as Aapo just like it said in the challenge description. But how can we do that? Let's examine the certificate. 
+Uhhuh, so we need to identify ourselves to the website as Aapo just like it said in the challenge description. But how can we do that? Let's examine the certificate.
+
 ![secinfo](./web/secinfo.png)
 
 Lets view the certificate
