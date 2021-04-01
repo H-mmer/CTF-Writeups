@@ -359,6 +359,7 @@ drwxrwxrwx root root   512 B  Tue Mar 30 15:14:57 2021  ..
 We have some odd format files in there. File command tells us something new.
 
 first file: `1CA048: Microsoft color profile 2.1, type Lino, RGB/XYZ-mntr device, IEC/sRGB model by HP, 3144 bytes, 9-2-1998 6:49:00, relative colorimetric "sRGB IEC61966-2.1"`
+
 second file:`1CAAB8: Tower/XP rel 2 object not stripped`
 
 This doesn't tell us much, maybe we're off the tracks here. Let's try some different program to extract data with like [foremost](https://github.com/jonstewart/foremost.git)
