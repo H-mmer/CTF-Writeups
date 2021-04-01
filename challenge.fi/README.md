@@ -1675,7 +1675,7 @@ Note: This challenge is based on a real world example of a finding from a bug bo
 ```
 This one was actually very difficult, no hints whatsoever. No indication where to begin except the website. Took me over 2 days to figure this one out, but I'll try to keep it short.
 First I started by going to the website annd we get greeted with this:
-![spongebob]./web/(spongebob.png)
+![spongebob](./web/spongebob.png)
 So I figure i'd check the source using `view-source:` and we got this!
 
 ![debug](./web/debug.png)
