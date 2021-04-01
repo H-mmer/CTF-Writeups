@@ -1539,7 +1539,7 @@ We scroll down a bit more and we find out we're able to download the certificate
 
 ![certdownload](./web/certdownload.png)
 
-Lets do exactly that and then lets try something with OpenSSL. Lets use `openssl s_client -connect aapoweb.challenge.fi:8008 -cert aapoweb.pem`
+Lets do exactly that and then lets try something with OpenSSL. Lets use ```openssl s_client -connect aapoweb.challenge.fi:8008 -cert aapoweb.pem```
 ```
 $ openssl s_client -connect aapoweb.challenge.fi:8008 -cert aapoweb.pem
 unable to load client certificate private key file
