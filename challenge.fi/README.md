@@ -675,6 +675,7 @@ Lets check the first hint:
 
 Okay that tells us something, lets fire up the game. Start by running `python3 server.py` followed by `python3 client.py`
 ![first_start](./cheating/first_start.png)
+
 We can see our Ammo, Reload and HP in there. Hint said the first achievement is called "PEW PEW" so it must be something to do with the Ammo. Lets try shooting. We spend our 4 ammo and we begin to reload. So I think we must figure out how to shoot more than 4 times. Lets take a look at the `client.py` file. We scroll down to the bottom of the file and find our "shoot" function on lines 129-138
 ```
                     if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
