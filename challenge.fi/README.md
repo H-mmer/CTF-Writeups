@@ -676,32 +676,33 @@ Lets check the first hint:
 Okay that tells us something, lets fire up the game. Start by running `python3 server.py` followed by `python3 client.py`
 ![first_start](./cheating/first_start.png)
 
-We can see our Ammo, Reload and HP in there. Hint said the first achievement is called "PEW PEW" so it must be something to do with the Ammo. Lets try shooting. We spend our 4 ammo and we begin to reload. So I think we must figure out how to shoot more than 4 times. Lets take a look at the `client.py` file. We scroll down to the bottom of the file and find our "shoot" function on lines 129-138
+We can see our Ammo, Reload and HP in there. Hint said the first achievement is called "PEW PEW" so it must have something to do with the Ammo. Lets try shooting. We spend our 4 ammo and we begin to reload. So I think we must figure out how to shoot more than 4 times. Lets take a look at the `client.py` file. We scroll down to the bottom of the file and find our "shoot" function on lines 129-138
 ```
-                    if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-                        if me.ammo > 0:
-                            sendevent.append(
-                                [
-                                    "shoot",
-                                    me.x + math.cos(me.mouseDir(camera_pos)) * 60,
-                                    me.y - math.sin(me.mouseDir(camera_pos)) * 60,
-                                    me.mouseDir(camera_pos),
-                                ]
-                            )
+Line 129:                    if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+Line 130:                        if me.ammo > 0:
+Line 131:                            sendevent.append(
+Line 132:                                [
+Line 133:                                    "shoot",
+Line 134:                                    me.x + math.cos(me.mouseDir(camera_pos)) * 60,
+Line 135:                                    me.y - math.sin(me.mouseDir(camera_pos)) * 60,
+Line 136:                                    me.mouseDir(camera_pos),
+Line 137:                                ]
+Line 138:                            )
 ```
 Looking at the if clause `if me.ammo > 0:` if me(player).ammo is more than 0 sendevent "shoot" clearly we can exploit this and remove the whole if clause.
 ```
-                    if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-                        sendevent.append(
-                            [
-                                "shoot",
-                                me.x + math.cos(me.mouseDir(camera_pos)) * 60,
-                                me.y - math.sin(me.mouseDir(camera_pos)) * 60,
-                                me.mouseDir(camera_pos),
-                            ]
-                        )
+Line: 129                    if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+Line: 130                        sendevent.append(
+Line: 131                            [
+Line: 132                                "shoot",
+Line: 133                                me.x + math.cos(me.mouseDir(camera_pos)) * 60,
+Line: 134                                me.y - math.sin(me.mouseDir(camera_pos)) * 60,
+Line: 135                                me.mouseDir(camera_pos),
+Line: 136                            ]
+Line: 137                        )
 ```
 Now the client doesn't do a check if we have more than 0 ammo and should let us shoot infinitely. Save the file and lets try it out. Launch the client again `python3 client.py` and start shooting. Yes it works! but we didn't get achievement because we're not in the correct server, lets change that. Lets comment `line 113` and uncomment the `line 114` now we can connect to the CTF hosted challenge server. Fire up the client again and go shooting.
+
 ![pewpew](./cheating/pewpew.png)
 #### 7.2 Project Kyyber 2021 part 2
 ```
