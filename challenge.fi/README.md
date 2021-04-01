@@ -745,14 +745,18 @@ Back in the `client.py` change we add a new sendevent in our jump function like 
                     sendevent.append(["reload"])
 ```
 That should do it, lets try it!
+
 ![noroof](./cheating/noroof.png)
+
 SUCCESS!
 #### 7.3 Project Kyyber 2021 part 3
 Hint:
  1. Achievement for part 3 is called "BOSSKILLER!"
 
 Alrighty then time to get those bigboy pants and see what we're up against. Lets try jumping all the way to the end of the world and see if we can find the boss.
+
 ![bossfound](./cheating/bossfound.png)
+
 Boss was found and when we landed we got killed pretty much instantly. Hmmmm, how do we proceed from this?
 Well first off we might want to shoot automatically so we dont need to click all the time. Lets do that first.
 
@@ -856,6 +860,7 @@ The image can be found from DockerHub: https://hub.docker.com/r/challengeapp/mya
 ```
 Our hint is:
 ![bucket](./cloud/bucket.png)
+
 Looks like we need to install docker on our kali linux so lets do exactly that here's the [link](https://linuxhint.com/install_docker_kali_linux/) for installing Docker on Kali linux. Once that is done lets dive into the challenge.
 First lets pull our docker image with `docker pull challengeapp/myapp`
 ```
