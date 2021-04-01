@@ -1676,12 +1676,15 @@ Note: This challenge is based on a real world example of a finding from a bug bo
 This one was actually very difficult, no hints whatsoever. No indication where to begin except the website. Took me over 2 days to figure this one out, but I'll try to keep it short.
 First I started by going to the website annd we get greeted with this:
 ![spongebob](./web/spongebob.png)
+
 So I figure i'd check the source using `view-source:` and we got this!
 
 ![debug](./web/debug.png)
 
-Alright! We got something, looks like the site has xml.php with xml parameter. The string looks like its URL Encoded and Base64 encoded so lets use [CyberChef](https://gchq.github.io/CyberChef/) to decode it. We got this:
+Alright! We got something, looks like the site has xml.php with xml parameter. The string looks like its URL Encoded and Base64 encoded so lets use [CyberChef](https://gchq.github.io/CyberChef/) to decode it.
+
 ![decoded](./web/decoded.png)
+
 Alright so we're dealing with actual XML and I figured we're most likely going to do some sort of XXE attack (XML External Entity) here. So I start googling about XXE attacks and I tried a few (read: A LOT) different ways but I never seemed to get any other response from the server than `Username or password not found! Try Harder!`. Then after a while of banging my head against the table I stumbled upon [THIS](https://medium.com/@jonathanbouman/xxe-at-bol-com-7d331186de54) a brilliant bugbounty write up by Jonathan Bouman. He was using [xxeserv](https://github.com/staaldraad/xxeserv) along with external DTD file on a public facing server. So that's exactly what I did. I installed xxeserv and copied his sp2.dtd
 ```
 <!ENTITY % d SYSTEM "file:///etc/flag.txt">
