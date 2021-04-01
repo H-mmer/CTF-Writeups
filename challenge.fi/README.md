@@ -69,7 +69,7 @@ Lets pop that terminal open again and use this little script that rotates the al
  $ echo SYNT{jryy_guvf_jnf_rnfl} | tr '[a-m][n-z][A-M][N-Z]' '[n-z][a-m][N-Z][A-M]'
 ```
 #### 2.3 I want to see more, see more and see more
-Here we are given a [code.png](https://challenge.fi/files/740b6b18b1bf00e3237fbc7fc66d1072/code.png?token=eyJ1c2VyX2lkIjo0NjAsInRlYW1faWQiOm51bGwsImZpbGVfaWQiOjM1fQ.YGIVKg.kJjS4LmvtjzkcT4xTlu7kJ10fpE) picture which contains QR code. I chose to use [this](https://zxing.org/w/decode.jspx) website to decode the QR code from the image.
+Here we are given a ![code.png](./basic-ciphers/code.png) picture which contains QR code. I chose to use [this](https://zxing.org/w/decode.jspx) website to decode the QR code from the image.
 Now we got something that looks like binary
 ```
 1101 1011 10 001 000111 110010 0111 1 1 1001 110010 0111 000 000 1001 110010 0111 1 1 1001 110010 0111 1 1 1001 110010 0111 000 000 1001 110010 00 110 1011 0 11 1001 1011 1 110010 1011 10 0100 1 101 111 110010 000 01 110010 0 000 1001 110010 000 1101 110010 1 10 0101 1111 110010 000 0 1111 1 101
@@ -461,11 +461,12 @@ The task is to find out how the program encrypts the contents of a given file an
 Let's start off by creating a file with something simple inside it lets do a `echo "hello world" > plain_text` and the encode it using `./encode plain_text plain_text.encrypted` and lets run `cat plain_text.encrypted`
 ```
 $ cat plain_text.encrypted
-�0����```
+�0����
+```
 So we get this weird gibberish lets try to decrypt this using the decode program.
 `./decode plain_text.encrypted plain_text.decrypted`
 ```
-# ./decode plain_text.encrypted plain_text.decrypted
+$ ./decode plain_text.encrypted plain_text.decrypted
 Enter length of the encryption key (1-1024):
 1
 
@@ -474,7 +475,7 @@ a5
 ```
 Okay so we get asked the length of the key and and actual keys to decrypt the data. Those must be inside the encode binary since we didn't input anything when we ran the encode binary. Let's open it up with strings and see if there's any hints. 
 ```
-# strings -n 7 -t x encode
+$ strings -n 7 -t x encode
     318 /lib64/ld-linux-x86-64.so.2
     519 libc.so.6
     534 __stack_chk_fail
@@ -1705,7 +1706,7 @@ Username or password not found! Try Harder!
 ```
 I thought "nononono not this again...." but then I checked my xxeserv and FINALLY I got a response from the server!
 ```
-# ./xxeserv -w -wp 21
+$ ./xxeserv -w -wp 21
 2021/04/01 10:19:50 [*] Starting Web Server on 21 [./]
 [*] Found certificate files in directory. Using these.
 2021/04/01 10:19:50 [*] GO XXE FTP Server - Port:  2121
@@ -1713,7 +1714,7 @@ I thought "nononono not this again...." but then I checked my xxeserv and FINALL
 2021/04/01 10:20:01 [13.49.220.72:49414][200] /dtds/sp2.dtd
 2021/04/01 10:20:01 [13.49.220.72:49416][404] /ZmxhZ3tUMzRtX1IwVF9XNHNfSDNyRSF9Cg==
 
-$ # echo ZmxhZ3tUMzRtX1IwVF9XNHNfSDNyRSF9Cg== |base64 -d
+$ echo ZmxhZ3tUMzRtX1IwVF9XNHNfSDNyRSF9Cg== |base64 -d
 flag{T34m_R0T_W4s_H3rE!}
 ```
 Success! CTF Complete, it took me a few days but the feeling was worth it. Hope you learned something from this, see you on the next write-up!
