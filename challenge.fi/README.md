@@ -1464,8 +1464,10 @@ Dictionary cache built:
 69ba2cec4f84667e875e9db710b3c9ad:bfds3:chess
 ```
 Now we can login with admin:chess
+
 ![isnice](./web/isnice.png)
-IZ NICE!
+
+BORAT SAYZ IZ NICE!
 #### 9.4 Hack MD
 ```
 System administrator has enabled a experimental feature on web application. They have been notified that there's a security vulnerability present in the installation, but have neglected the issue.
