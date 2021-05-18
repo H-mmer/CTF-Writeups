@@ -132,9 +132,9 @@ while True:
                 sendevent.append(
                     [
                         "shoot",
-                        me.x + math.cos(me.mouseDir(camera_pos)) * 60,
-                        me.y - math.sin(me.mouseDir(camera_pos)) * 60,
-                        me.mouseDir(camera_pos),
+                        master.x + math.cos(me.mouseDir(camera_pos)) * 60,
+                        master.y - math.sin(me.mouseDir(camera_pos)) * 60,
+                        master.mouseDir(camera_pos),
                     ]
                 )
                 if me.state == "normal" and not me.reloadleft and not me.ammo > 0:
