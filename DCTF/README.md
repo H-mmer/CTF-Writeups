@@ -1,6 +1,7 @@
 # dCTF
+
 - [dCTF](#dctf)
-- [1. MISC](#1-misc)
+  - [1. MISC](#1-misc)
     - [1.1 Encrypted Flag I Have](#11-encrypted-flag-i-have)
     - [1.2 Dragon](#12-dragon)
     - [1.3 Don't Let it run](#13-dont-let-it-run)
@@ -10,23 +11,24 @@
     - [1.7 Powerpoint Programming](#17-powerpoint-programming)
     - [1.8 Show us your ID](#18-show-us-your-id)
     - [1.9 Company Leak](#19-company-leak)
-- [2. Crypto](#2-crypto)
+  - [2. Crypto](#2-crypto)
     - [2.1 Forgotten Secret](#21-forgotten-secret)
     - [2.2 Strong Password](#22-strong-password)
     - [2.3 Julius' ancient script](#23-julius-ancient-script)
     - [2.4 Just Take Your Time](#24-just-take-your-time)
     - [2.5 Scooby-doo](#25-scooby-doo)
     - [2.6 Private Encryption Mistake](#26-private-encryption-mistake)
-    - [2.7 A Simple SP Box!](#27-a-simple-sp-box)
+    - [2.7 A Simple SP Box](#27-a-simple-sp-box)
     - [2.8 This one is really basic](#28-this-one-is-really-basic)
     - [2.9 Data Recovery](#29-data-recovery)
     - [2.10 Lockpicking](#210-lockpicking)
-- [3. Web](#3-web)
+  - [3. Web](#3-web)
     - [3.1 DevOps vs SecOps](#31-devops-vs-secops)
     - [3.2 Simple Web](#32-simple-web)
 
-# 1. MISC
-#### 1.1 Encrypted Flag I Have
+## 1. MISC
+
+### 1.1 Encrypted Flag I Have
 
 ![encrypted_flag_i_have](./images/encrypted_flag_i_have.png)
 
@@ -36,16 +38,18 @@ First off we start with this. It looks like yoda-ism, lets take a look at the fi
 Indeed I was correct. It's Star Wars language called Aurebesh. We can use a decoder from [dcode.fr](https://www.dcode.fr/aurebesh-alphabet). It's missing {} letter's but we can add them to the flag ourself.
 Once decoded the flag is: DCTF{MASTERCODEBREAKER}
 
-#### 1.2 Dragon
+### 1.2 Dragon
+
 ![dragon](./images/dragon.png)
 
 Let's check the file
-![dragon_chall](./images/dragon_chall.png)
+<img src="./images/dragon_chall.png" height=400px width=400px>
 
 We use [Aperisolve](https://aperisolve.fr/4a8a0f4de960dcedac96b13267b1c0c7) to analyze the file and we got the flag from the blue spectrum
-![dragon_chall_solve](./images/dragon_png_solve.png)
+<img src="./images/dragon_png_solve.png" height=500px width=500px>
 
-#### 1.3 Don't Let it run
+### 1.3 Don't Let it run
+
 ![dont_let_it_run](./images/dont_let_it_run.png)
 
 At first when opening the [PDF](./DontLetItRun/dragon.pdf) there's just a picture of the same dragon as in previous challege so I decided to run strings on the file
@@ -60,9 +64,10 @@ Let's grab that string and and run a command.
 $ echo 766172205F3078346163393D5B2736363361435968594B272C273971776147474F272C276C6F67272C273150744366746D272C27313036387552596D7154272C27646374667B7064665F316E6A33637433647D272C273736383537376A6868736272272C2737313733343268417A4F4F51272C27373232353133504158436268272C2738333339383950514B697469272C27313434373836335256636E546F272C2731323533353356746B585547275D3B2866756E6374696F6E285F30783362316636622C5F3078316164386237297B766172205F30783536366565323D5F3078353334373B7768696C652821215B5D297B7472797B766172205F30783237353061353D7061727365496E74285F307835363665653228307831366529292B2D7061727365496E74285F307835363665653228307831366429292B7061727365496E74285F307835363665653228307831366329292B2D7061727365496E74285F307835363665653228307831373329292A2D7061727365496E74285F307835363665653228307831373129292B7061727365496E74285F307835363665653228307831373229292A2D7061727365496E74285F307835363665653228307831366129292B7061727365496E74285F307835363665653228307831366629292A7061727365496E74285F307835363665653228307831373529292B2D7061727365496E74285F307835363665653228307831373029293B6966285F30783237353061353D3D3D5F307831616438623729627265616B3B656C7365205F30783362316636625B2770757368275D285F30783362316636625B277368696674275D2829293B7D6361746368285F3078353736346134297B5F30783362316636625B2770757368275D285F30783362316636625B277368696674275D2829293B7D7D7D285F3078346163392C3078386439376629293B66756E6374696F6E205F30786128297B766172205F30783363366432303D5F3078353334373B636F6E736F6C655B5F3078336336643230283078313734295D285F307833633664323028307831366229293B7D76617220613D27626B706F646E746A636F7073796D6C78656977686F6E7374796B787372707A79272C623D2765787262737071717573746E7A717269756C697A70656565787771736F666D77273B5F30786228612C62293B66756E6374696F6E205F307835333437285F30783337646533352C5F3078313961633236297B5F30783337646533353D5F30783337646533352D30783136613B766172205F30783461633965613D5F3078346163395B5F30783337646533355D3B72657475726E205F30783461633965613B7D66756E6374696F6E205F307862285F30783339623365652C5F3078666165353433297B766172205F30783235393932333D5F30783339623365652B5F30786661653534333B5F30786128293B7D0A |unhex
 var _0x4ac9=['663aCYhYK','9qwaGGO','log','1PtCftm','1068uRYmqT','dctf{pdf_1nj3ct3d}','768577jhhsbr','717342hAzOOQ','722513PAXCbh','833989PQKiti','1447863RVcnTo','125353VtkXUG'];(function(_0x3b1f6b,_0x1ad8b7){var _0x566ee2=_0x5347;while(!![]){try{var _0x2750a5=parseInt(_0x566ee2(0x16e))+-parseInt(_0x566ee2(0x16d))+parseInt(_0x566ee2(0x16c))+-parseInt(_0x566ee2(0x173))*-parseInt(_0x566ee2(0x171))+parseInt(_0x566ee2(0x172))*-parseInt(_0x566ee2(0x16a))+parseInt(_0x566ee2(0x16f))*parseInt(_0x566ee2(0x175))+-parseInt(_0x566ee2(0x170));if(_0x2750a5===_0x1ad8b7)break;else _0x3b1f6b['push'](_0x3b1f6b['shift']());}catch(_0x5764a4){_0x3b1f6b['push'](_0x3b1f6b['shift']());}}}(_0x4ac9,0x8d97f));function _0xa(){var _0x3c6d20=_0x5347;console[_0x3c6d20(0x174)](_0x3c6d20(0x16b));}var a='bkpodntjcopsymlxeiwhonstykxsrpzy',b='exrbspqqustnzqriulizpeeexwqsofmw';_0xb(a,b);function _0x5347(_0x37de35,_0x19ac26){_0x37de35=_0x37de35-0x16a;var _0x4ac9ea=_0x4ac9[_0x37de35];return _0x4ac9ea;}function _0xb(_0x39b3ee,_0xfae543){var _0x259923=_0x39b3ee+_0xfae543;_0xa();}
 ```
+
 There we go, we go it unhexed and flag is looking right at us!
 
-#### 1.4 Hidden Message
+### 1.4 Hidden Message
 
 ![hidden_message](./images/hidden_message.png)
 
@@ -73,9 +78,11 @@ $ zsteg -a images/fri.png
 b1,rgb,lsb,xy       .. text: "dctf{sTeg0noGr4Phy_101}"
 b3,g,lsb,xy         .. text: "I@4I)$Xl"
 ```
+
 The very first line revealed us the flag!
 
-#### 1.5 Leaked spin
+### 1.5 Leaked spin
+
 ![leaked_spin](./images/leaked_spin.png)
 
 Let's check the hint first before even trying to figure out anything.
@@ -83,6 +90,7 @@ Let's check the hint first before even trying to figure out anything.
 ![leaked_spin_hint](./images/leaked_spin_hint.png)
 
 So it's a kind of OSINT challenge, alright I'm confident I can do this. First I google [dragonsecsi github](https://www.google.com/search?q=dragonsecsi) and I go in [there](https://github.com/DragonSecSI). We can find that there's repository called `DCTF1-chall-leak-spin` so let's jump in there and check it out. There's a file called challenge.yml and it contains the flag:
+
 ```yml
 name: "Leak Spin"
 author: "Miha M."
@@ -103,8 +111,8 @@ state: visible
 version: "1.0"
 ```
 
+### 1.6 Extraterrestial Communication
 
-#### 1.6 Extraterrestial Communication
 ![extraterrestial_communication](./images/extraterrestial_communication.png)
 
 Let's check out the hint first.
@@ -120,7 +128,7 @@ With RX option Scottie 1 we can decode the signal into a picture. Play the mp3 f
 
 Flag: dctf{wHat_ev3n_1s_SSTV}
 
-#### 1.7 Powerpoint Programming
+### 1.7 Powerpoint Programming
 
 ![powerpoint](./images/powerpoint.png)
 
@@ -128,7 +136,7 @@ Let's open the [file](PowerPoint_Programming/chall.ppsx) in powerpoint. We see 3
 Click on the Animation pane and a sidebar opens up with the animations. Scroll down and you can see full animation list.
 Just follow the animation instructions in the sidebar and read the flag: dctf{ppt_1snt_v3ry_s3cur3_1s_1t}
 
-#### 1.8 Show us your ID
+### 1.8 Show us your ID
 
 ![show_us_id](./images/show_us_your_id.png)
 
@@ -136,9 +144,9 @@ Let's check the hint first
 
 ![show_us_your_id](./images/show_us_your_ID_hint.png)
 
-Let's open the file with `strings`. 
+Let's open the file with `strings`.
 
-```
+```bash
 %PDF-1.3
 1 0 obj
 /Pages 2 0 R
@@ -201,6 +209,7 @@ BckgObjc
 Rd  doub@o
 Grn doub@o
 ```
+
 A whole bunch of stuff.. that doesnt help much. The challenge name gave an idea. Let's grep the file.
 
 ```js
@@ -211,13 +220,15 @@ id="646374667b3362306261347d"?>
 
 Still a whole lot of stufff but only one thing we're interested in `id="646374667b3362306261347d"`. That looks like a hex encoded string.
 Lets use unhex on it.
+
 ```bash
 $ echo 646374667b3362306261347d |unhex
 dctf{3b0ba4}
 ```
+
 We got the flag!
 
-#### 1.9 Company Leak
+### 1.9 Company Leak
 
 ![company_leak](./images/company_leak.png)
 
@@ -263,9 +274,9 @@ There really is a Linux, and these people are using it, but it is just a part of
 (text above is a joke)
 ```
 
+## 2. Crypto
 
-# 2. Crypto
-#### 2.1 Forgotten Secret
+### 2.1 Forgotten Secret
 
 ![dockerimage](./images/forgotten_secret.png)
 
@@ -314,6 +325,7 @@ drwxr-xr-x root root   4 KB Fri May  7 10:38:26 2021  ee6ac2faa564229d8913007
 .rw-r--r-- root root 674 B  Fri May 14 18:17:20 2021  manifest.json
 .rw-r--r-- root root  99 B  Fri May 14 18:17:20 2021  repositories
 ```
+
 Lets check out the json file first.
 
 ```json
@@ -444,6 +456,7 @@ Lets check out the json file first.
   }
 }
 ```
+
 Whoahh! that's a lot of stuff, but we can see that there's `id_rsa` private key file, `SECRET_KEY` environment variable and `cipher.bin` encrypted file. So we probably need to use that `id_rsa` to decrypt that `cipher.bin` and we can assume `SECRET_KEY` is being used as a passphrase for the privatekey.
 So first things first, lets find where the privatekey is.
 
@@ -503,13 +516,12 @@ vuYZEA==
 Well well well, look at that. It's old format and definitely not one used encrypt the cipher since no tools can encrypt files with that format. So we must change the key's format into something more modern like PEM.
 We can do it like this:
 
-`puttygen id_rsa -O private-openssh -o dctf.pem` and we use the SECRET_KEY as password. 
+`puttygen id_rsa -O private-openssh -o dctf.pem` and we use the SECRET_KEY as password.
 After that we can use [cyberchef](https://gchq.github.io/CyberChef/#recipe=RSA_Decrypt('-----BEGIN%20RSA%20PRIVATE%20KEY-----%5CnProc-Type:%204,ENCRYPTED%5CnDEK-Info:%20DES-EDE3-CBC,66CD19504AE3782B%5Cn%5CndPwaWL2aUUMqy3yMdZWEMG8NOO91M6to9%2BZC9/4kLCc6om63B9lWW2KaeA/7ZJdu%5CnCTrUBwnolk4iw77UmzXFMQwXDbx5YrfBDjZgIUgF3m3TNOCkfGZ8VlQxQbG0tjYy%5CnHxQCHHt5bdnB4OWMLN8JWYH9X1Y7BzIguLW5b49%2BIqbK%2Bd2%2BBLLs1PHBqh0uW5t0%5CnUmM0hzR185mna%2B2/380G0L1kZCQ95r3YWfVeUMENH2bKHsQD1ywJthXjtE58Sl%2Bo%5CnuuDREsxDZMXd6WUsdstXrG0lkF5mDjMW2HYdeWs8GqBTvMsjalYBRZZ4PPigE2Tp%5CnmAANa5YG3wsPNxKX%2BTizLFCuE5fZy5PVYeOKhlsEoV1CBYGA2/K4Z/uGX78vNamL%5CnLRCRO/xcuds8Zc%2B6QlrsxjwoqEdh/inbJZqveCDYweWx4zJJMoXU/xb1CHOSQux4%5CnLFKbaRJ03%2Bg0wo2s4ZLEVnYIOHhOFYCdUcG2ABkCbqzpjLVmYeHOmpLpSSvPxUOL%5Cn6cNhreBsGW/SAhag1NTWExbefxJu7L6FDgtOlpxZ82aBo/Q8BbLWtscIDGaiYIla%5CnvuAE5eCdnlEWDPHBnww%2Bvc6SikhPhNuhj9bQliqYyIpHiU75F0GNlH1rcSpsesZt%5CnLRK9JfjCLdYLdIlWBGSX%2BixCEYlD20EIlu7PYU8moIRLShXxPyU/PF82DfuV3Tec%5Cn5a2xdDWvpPNYd/Wq%2BuhF2FytXvcA%2Bn43gHRhL6760xllonWuWp1w0TDcIcbkT5q7%5CnHr7CfGbo6bDqL4KS3TipdO/p7PsawtrNXL2b0NM3rHSqH4Emryc%2BlY4imxha2gkz%5Cna18mC8NZY6oSBjGHEZcdddnTbCWTZyORsQuqX0DmqXhAGCifs2iT%2B66sCnXFjubD%5CnH5yDUajIvnnt/BY6VEi6pndL3nOe1soFzCCTYhaey8bcVRbH6B489uofq60RbeEL%5CnVefF/n7G9oHN8zDikXFNCndCw74SCW2oYKCuD2WDrsoS2ZYe1AE/O1wvIGLfeWP0%5CnGDTon7k5GCy%2B8/GphKPPzRFR4lOUFC21CKpVswukYil2VmNkOYqJqlKeS8d9/3Di%5CnqbXebHRYY26Cke47zB/U2/BmOgvu0Zemlxc7SCTfnEKmyDiw0JS2erND38yCz0aw%5CnzjpmA7yV3PjQ57PZxY2FHVHkIbsyrb1mqDELUlFkuYfaUJgXRcrFX3k9aiMboGyI%5CnmO64k0hzKZ0cEthDxiLg1HzBxzPULj6iR%2BVZjEvPQFzZjEq8tTm9hDJJfzF%2BKnl/%5Cn8YuRR/jd7OfAX3d2WV3NOSqCvW6J7qnpukM/i1cTAfq7O3Gm5aZoK5QTt5apCkYG%5CnggjvD0PwPSy61URZOd2JMPo4HTHX5jG8wtueHiRgMxULgN1iLn4/B1Mw3Hq9oBG%2B%5Cnmx6Keu/3Kwmr3UiOZ4vHgNh7lngERoaJfnRi4ackhrw8%2BhDWzdYv5fRfXZb31Dlu%5Cn8ic/Y3NCrHVRyDWs8VtDKcW9%2BfXfbhzeORlDpfrJ4JW8ZgLqb/fLaFg7Ze8wONXJ%5CnmIMWxaCvoDa981LZHVRxC9UrgRRtQsNFgoFB3a9tpt3GdaazHqB71qZnMOgE88p6%5CnDgGOaKfivKBGzzLL0nVWwYhy/TU11HDlw2i7cL7StCMlw9bY4i/txt7cHon9dg5g%5CnHmB9TAU9Xcazfu3wm0uM/1AM%2BoJa08roUno32wAW2QYTGENO9C%2Bg4Wfvi0TxXjCo%5Cnm%2BfLW8XS/EArIcCplhuRtT4W5RfieZ5Slxffkz%2BrHq9SEBamAjyWvf8IHbquvoOF%5Cnl8Hyis9Ivu75bRwt0LUDUtGhu1n51RRIZeXiqAMRvDDBw1XDTLQkxBZWAxkw1LNp%5Cno/0siLyAUMV/dRQBi30tyl53o8lixZZhi7UOHHJAL0PT6c13doR/Y9MyT8BGS8EU%5CnOmo197lPFIc5O39elSwTYpS%2BKMdXBX0N2rg1PJEgprPncah%2B/85DmuE5VTCbb6Ap%5CnhO9OfK%2BxfBWXXZVPlR6/wgcmdfjOUHAScZoiTHCS5jAxeonAoQdA0SOck2AfLNL4%5CnlqEFtx%2BAppCbOlnHP7FMWgewPAvsd1z6d4U0gp6rWf4lnwNfr6hStbQvFNBn2CSe%5CnpeJWA4T0YpWR37aGhIKN9yxIkycoH3nWeNGxuUPY85s4Q8xax7y/LNCDzea5sFii%5CnctaUmZAzeXxKWidopKEtQpqq21R4B3n8/DmRGbOZiIubfwmllVK%2BvYnyi5/67eRd%5Cnouz/c15WaMp4pwLcGhP8CuFmGu%2BT8I7dFnI6TfUnyhkKRRKmPeKx5HihdyFXdGR2%5CnSysiddF7qV7hHsdRzeqhuCe2XV19JoGuQz14EYy5ZMQgNT7YsjmCfQ%3D%3D%5Cn-----END%20RSA%20PRIVATE%20KEY-----','58703273357638792F423F4528482B4D6251655468566D597133743677397A24','RSAES-PKCS1-V1_5','SHA-1')) to decrypt the `cipher.bin` with the new privatekey and password.
 
 Vóila we got the flag `Do not hardcode keys inside images! But here you go dctf{k33p_y0r_k3ys_s4f3}.`
 
-
-#### 2.2 Strong Password
+### 2.2 Strong Password
 
 ![strong_password](./images/strong_password.png)
 
@@ -561,9 +573,10 @@ Compressed: 5373
 $ grep -o dctf.* lorem_ipsum.txt
 dctf{r0cKyoU_f0r_tHe_w1n} Etiam in volutpat nunc. Aliquam erat volutpat. Ut dapibus, sem at posuere sollicitudin, tellus elit faucibus ligula, ut malesuada leo erat eu sem. Nam nulla lacus, feugiat placerat porttitor eu, sodales quis quam. Duis efficitur, nisl ege
 ```
+
 We got the flag: dctf{r0cKyoU_f0r_tHe_w1n}
 
-#### 2.3 Julius' ancient script
+### 2.3 Julius' ancient script
 
 ![julius](./images/julius_secret_script.png)
 
@@ -571,7 +584,7 @@ We get a file with one line in it `rq7t{7vH_rFH_vI6_pHH1_qI67}`. Looks like a ba
 Because there are number we can use [this online tool](https://planetcalc.com/8572/)
 Paste the line there and press calculate. Result is in ROT22 dctf{th3_d13_h4s_b33n_c4st}
 
-#### 2.4 Just Take Your Time
+### 2.4 Just Take Your Time
 
 ![takeyourtime](./images/just_take_your_time.png)
 
@@ -637,6 +650,7 @@ else:
     print("Congratulations! Here is your flag.")
     print(flag)
 ```
+
 So it seems like our first stage is about supplying a product of two numbers. Numbers are between `1000000000000000 and 9999999999999999` shouldn't be too hard since we have python. So we device this:
 
 ```py
@@ -652,6 +666,7 @@ success(str(res))
 p.sendlineafter("> ",str(res))
 p.interactive()
 ```
+
 And we try it out and we get this as a result:
 
 ```py
@@ -662,7 +677,7 @@ You have proven yourself to be capable of taking on the final task. Decrypt this
 [*] Got EOF while reading in interactive
 ```
 
-Alright time to look at the source code again. 
+Alright time to look at the source code again.
 
 ```py
 key = str(int(time())).zfill(16).encode("utf-8")
@@ -709,8 +724,7 @@ dctf{1t_0n1y_t0Ok_2_d4y5...}
 
 ```
 
-
-#### 2.5 Scooby-doo
+### 2.5 Scooby-doo
 
 ![scooby-doo](./images/scooby-doo.png)
 
@@ -742,12 +756,13 @@ s=$(cat cipher.txt | cut -b $j | tr -d '\n')
    done
 done
 ```
+
 It compares every character by character by line and if it matches the position in the alphabet it prints it out.
 After running the script for ~1sec we get the flag. (Didn't bother to write about the hours of mistakes on this.)
 
 DCTF{TURINGWOULDBEPROUD}
 
-#### 2.6 Private Encryption Mistake
+### 2.6 Private Encryption Mistake
 
 ![pem](./images/private_encryption_mistake.png)
 
@@ -756,8 +771,9 @@ Check the hint
 ![pemhint](./images/private_encryption_mistake_hint.png)
 
 Alrighty then lets take a look at the actual file we got.
+<img src="./images/blurred.png" height=937px width=541px>
 
-![blurred](./images/blurred.png)
+![blurred](./images/blurred.png =541x937)
 
 Well this looks awefully familiar. There's a [blogpost](https://blog.cryptohack.org/twitter-secrets) by cryptohack that tells it's possible to create a fully functional privatekey from a poorly blurred one.
 After reading the blogpost this was a walk-in-the-park. Let's fire up our OCR tool and extract the data from the image.
@@ -775,9 +791,10 @@ pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesse
 decode = pytesseract.image_to_string(r'C:\\Users\\hackernrone\\Downloads\\blurred.png')
 print(decode)
 ```
+
 A little messy output like always with these OCR tools, we need to go through it by hand and this is what we get as a result.
 
-```
+```bash
 
 MIIJKQIBAAKCAgEAupQ7hhy0AQR0LRMZgP/Kl6J3l2+U+wp1YyVB8oDYvslE3AXU
 3igwX2LOYgG/JIHQ5UI2G/0Fu5iPPikh3JoUABGFyPwWsBLnohdBBtpvfRLprhbB
@@ -909,9 +926,9 @@ if __name__ == '__main__':
 
 ```
 
-That's a stripped down version of a script I used in MidnightSunCTF earlier this year which had the same idea of creating a new key from partial key. 
+That's a stripped down version of a script I used in MidnightSunCTF earlier this year which had the same idea of creating a new key from partial key.
 
-#### 2.7 A Simple SP Box!
+### 2.7 A Simple SP Box
 
 ![spbox](./images/sp_box.png)
 
@@ -981,7 +998,7 @@ opt = p.recv(1024)
 print (opt.decode())
 ```
 
-#### 2.8 This one is really basic
+### 2.8 This one is really basic
 
 ![basic](images/this_one_is_really_basic.png)
 
@@ -999,8 +1016,7 @@ $ cat cipher.txt | base64 -d | base64 -d| base64 -d| base64 -d| base64 -d| base6
 dctf{Th1s_l00ks_4_lot_sm4ll3r_th4n_1t_d1d}
 ```
 
-
-#### 2.9 Data Recovery
+### 2.9 Data Recovery
 
 ![datarec](images/data_recovery.png)
 
@@ -1008,7 +1024,7 @@ Lets check the hint
 
 ![datarechint](images/data_recovery_hint.png)
 
-Alright, lets get on with it. Lets unzip the file we got. 
+Alright, lets get on with it. Lets unzip the file we got.
 
 ```bash
 $ unzip recovered_data.zip
@@ -1044,7 +1060,7 @@ Archive:  recovered_data.zip
 
 Lets run file command on all of them.
 
-```
+```bash
 $ file ./*                                                                                                                  130 ⨯
 ./accounting.xls:     data
 ./alarm:              JPEG image data, Exif standard: [TIFF image data, big-endian, direntries=0], baseline, precision 8, 639x629, components 3
@@ -1094,19 +1110,19 @@ Looks like another base64 file. But after decoding it we get stuck. Doesn't seem
 
 Use `encrypted1` file as input and select `from Base64`. After that we figured out to try Magic function with intensive mode, and that was fruitful, the very first result says that the file can be XOR'd into ZIP file. So lets do just that.
 
-After converting it into a ZIP we can use CyberChefs [Unzip module](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true)XOR(%7B'option':'Hex','string':'6a'%7D,'Standard',false)Unzip('',false)) to get a look at the files inside. 
+After converting it into a ZIP we can use CyberChefs [Unzip module](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true)XOR(%7B'option':'Hex','string':'6a'%7D,'Standard',false)Unzip('',false)) to get a look at the files inside.
 
 We get a very_important.txt which has a lot of text inside so we just do simple ctrl+f search and look for `dctf` and Vóila we got ourselves a flag
 
 dctf{x0r_eNcRypt1on_brUt3foRce}
 
-#### 2.10 Lockpicking
+### 2.10 Lockpicking
 
 Didn't solve this one during CTF, challenge can be found [here](./Lockpicking/lockpicking.py) and solve can be found in [here](./Lockpicking/lockpicking_solve.py)
 
+## 3. Web
 
-# 3. Web
-#### 3.1 DevOps vs SecOps
+### 3.1 DevOps vs SecOps
 
 ![devopsvssecops](./images/devopsvssecops.png)
 
@@ -1176,8 +1192,7 @@ if __name__ == "__main__":
     os.system(f"ctf challenge sync challenge.yml ;ctf challenge install challenge.yml ")
 ```
 
-
-#### 3.2 Simple Web
+### 3.2 Simple Web
 
 ![simple_web](./images/simple_web.png)
 
@@ -1188,6 +1203,7 @@ flag=1&auth=0&Submit=Submit
 ```
 
 On changing auth from `0` to `1` and sending the request, you will get the flag.
+
 ```bash
 $ curl "http://dctf1-chall-simple-web.westeurope.azurecontainer.io:8080/flag" --data "flag=1&auth=1&Submit=Submit"
 There you go: dctf{w3b_c4n_b3_fun_r1ght?}
