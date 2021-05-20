@@ -771,9 +771,8 @@ Check the hint
 ![pemhint](./images/private_encryption_mistake_hint.png)
 
 Alrighty then lets take a look at the actual file we got.
-<img src="./images/blurred.png" height=937px width=541px>
 
-![blurred](./images/blurred.png =541x937)
+<img src="./images/blurred.png" height=937px width=541px>
 
 Well this looks awefully familiar. There's a [blogpost](https://blog.cryptohack.org/twitter-secrets) by cryptohack that tells it's possible to create a fully functional privatekey from a poorly blurred one.
 After reading the blogpost this was a walk-in-the-park. Let's fire up our OCR tool and extract the data from the image.
