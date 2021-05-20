@@ -61,8 +61,11 @@ Rules flag is located inside the rules. Once you've read them you see the flag.
 
 ### 2.1 Encoding Basics
 
-    This is the flag, but its encrypted. Well, nothing can be done about it...
-    RkxBR3tMb29rc19yZWFsbHlfY3J5cHRpY19idXRfaXNfZWFzaWx5X3JldmVyc2VkfQ==
+```bash
+This is the flag, but its encrypted. Well, nothing can be done about it...
+RkxBR3tMb29rc19yZWFsbHlfY3J5cHRpY19idXRfaXNfZWFzaWx5X3JldmVyc2VkfQ==
+```
+
 Our first challenge is to decrypt that string. We see the string is base64 encoded so we use basic linux terminal and decode it.
 
 `echo RkxBR3tMb29rc19yZWFsbHlfY3J5cHRpY19idXRfaXNfZWFzaWx5X3JldmVyc2VkfQ== | base64 -d`
@@ -118,7 +121,9 @@ FLAG:_BEEP_BOOP_BEEP_BEEP_BOOP_MULTIPLE_LAYERS_ON_TOP_OF_EACH_OTHER
 
 ### 3.1 OSINT: GEOINT 1
 
+```bash
     Time to test your skills on finding out a location based on what's in the picture: On what street is the picture taken on?
+```
 
 Here we have a [picture](./OSINT/osint1.png) from some busy street and we need to figure out what street the picture was taken. On a first glance you might see Getto Food & Drinks on the lower right corner of the picture so let's google [that](https://letmegooglethat.com/?q=getto+food+%26+drinks) and there we go, first link shows us its in Amsterdam and we have a street address Warmoesstraat 51. There's your flag
 
@@ -315,7 +320,9 @@ FLAG{ROTWasHere2021}
 
 ### 4.2 Deep inside ones and zeros
 
-    Ok, the first binary challenge was trivial. This may not be...
+```bash
+Ok, the first binary challenge was trivial. This may not be...
+```
 
 Let's download our [file](./binary/level2.out) and run strings again
 
@@ -372,7 +379,7 @@ Psst. Solita is recruiting, wink wink ;-)
 
 ### 5.1 What's in this picture? 1/2
 
-```
+```bash
 This picture seems interesting...
 Can you find a secret location in this picture?
 ```
@@ -575,7 +582,8 @@ Windows: decode.exe input.bin output.bin
 where input.bin is the file containing the encrypted data and output.bin is the file in which the non-encrypted data is written.
 The program asks you to provide the necessary information to decrypt the encrypted data.
 
-The task is to find out how the program encrypts the contents of a given file and finally decrypts the encrypted file “encrypted_data”.
+The task is to find out how the program encrypts the contents of a given file and finally
+decrypts the encrypted file “encrypted_data”.
 ```
 
 Let's start off by creating a file with something simple inside it lets do a `echo "hello world" > plain_text` and the encode it using `./encode plain_text plain_text.encrypted` and lets run `cat plain_text.encrypted`
@@ -599,7 +607,7 @@ a5
 
 Okay so we get asked the length of the key and and actual keys to decrypt the data. Those must be inside the encode binary since we didn't input anything when we ran the encode binary. Let's open it up with strings and see if there's any hints.
 
-```
+```bash
 $ strings -n 7 -t x encode
     318 /lib64/ld-linux-x86-64.so.2
     519 libc.so.6
@@ -686,7 +694,7 @@ Let's look at this address in hexdump ![hexdump](./crypto/crypto2/hexdump.png)
 
 Now that look like something we might use. Starting from 0x00004010 we can see 16 bytes that are being used as the keys to encrypt the data. So lets try using those.
 
-```
+```bash
 $ ./decode plain_text.encrypted plain_text.decrypted
 
 Enter length of the encryption key (1-1024):
@@ -767,7 +775,7 @@ If you are not able to run the unmodified clients or servers, you can ask help f
 
 Alrighty lets download the zip [file](./cheating/release_v1.0.zip) and extract it.
 
-```
+```bash
 wget https://challenge.fi/files/99da8fe9fe5b742f461157c130111a5f/release_v1.0.zip?token=eyJ1c2VyX2lkIjo1NDAsInRlYW1faWQiOm51bGwsImZpbGVfaWQiOjI1fQ.YGNmKw.cpMeCARelQxavQFV6hvfv_WYtQM -O release_v1.0.zip
 unzip release_v1.0.zip
 cd release_v1.0
@@ -775,7 +783,7 @@ cd release_v1.0
 
 Here we have the files
 
-```
+```bash
 $ ls -la
 drwxr-xr-x root root   4 KB Wed Feb 17 20:56:19 2021  .
 drwxr-xr-x root root   4 KB Tue Mar 30 20:58:00 2021  ..
@@ -1160,7 +1168,7 @@ Hints:
 
 We found out in [AWS Challenge 1](#81-aws-challenge-1) that there's a ssh-key in `/root/.ssh/id_ed25519` but how can we access root directory with our user? Simple answer, we can't since our user `joe` doesn't have permissions. Lets logout of the container if you're still in there and this time we log back in as the root user like so `docker exec -it -u root $(docker ps |grep -v CONT |awk '{print $1}') /bin/bash` and lets do `cat /root/.ssh/id_ed25519`
 
-```
+```bash
 -----BEGIN OPENSSH PRIVATE KEY-----
 b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
 QyNTUxOQAAACC5kqueAZDdMvOxBe6tBRjidBr0t2UFxGTeylMs093RzQAAAJi+AG31vgBt
@@ -1505,7 +1513,7 @@ Don't import this to your computer as a trusted root certificate!
 
 Lets download the [cert](./web/server.crt) and examine it using OpenSSL. Lets run `openssl x509 -in server.crt -text -noout`. We use `-text` to get the information about the certificate in our console and `-noout` to disable the certificate from being print to our console (optional)
 
-```
+```bash
 openssl x509 -in server.crt -text -noout
 Certificate:
     Data:
@@ -1564,7 +1572,8 @@ And we got the flag!
 ### 9.2 Hack weblogin part 1
 
 ```
-A web application developer has implemented an admin login interface. However, they have accidentally left a bug that allows any visitor to obtain password hashes. Can you obtain the admin user's password hash?
+A web application developer has implemented an admin login interface. However, they have accidentally left a bug that allows any visitor to obtain password hashes.
+Can you obtain the admin user's password hash?
 
 Do you accept the challenge?
 
@@ -1598,7 +1607,9 @@ We got the hash and it works as a flag!
 ### 9.3 Hack weblogin part 2
 
 ```
-A web application developer has implemented an admin login interface. However, they have accidentally left a bug that you exploited to obtain the password hashes on the previous challenge. Can you reverse the obtained hash and login to the service?
+A web application developer has implemented an admin login interface. 
+However, they have accidentally left a bug that you exploited to obtain the password hashes on the previous challenge.
+Can you reverse the obtained hash and login to the service?
 
 Do you accept the challenge?
 
@@ -1610,7 +1621,7 @@ Reversing a hash you say! There are multiple different tools out there which can
 `-m 10` is MD5(pass:salt) (another one would be -m 20 MD5(salt:pass))
 `rockyou.txt` includes a lot of passwords
 
-```
+```bash
 Dictionary cache built:
 * Filename..: rockyou.txt
 * Passwords.: 14344392
@@ -1630,9 +1641,11 @@ BORAT SAYZ IZ NICE!
 ### 9.4 Hack MD
 
 ```
-System administrator has enabled a experimental feature on web application. They have been notified that there's a security vulnerability present in the installation, but have neglected the issue.
+System administrator has enabled a experimental feature on web application. 
+They have been notified that there's a security vulnerability present in the installation, but have neglected the issue.
 
-The organization has a vulnerability disclosure program that allows you to test their systems - see if you can convince their system administrator that there is an active vulnerability that's exploitable by accessing the "secure" file on the machine!
+The organization has a vulnerability disclosure program that allows you to test their systems.
+See if you can convince their system administrator that there is an active vulnerability that's exploitable by accessing the "secure" file on the machine!
 
 https://hack-md.challenge.fi/welcome
 ```
@@ -1641,13 +1654,20 @@ We get to the site and we got this:
 
 ```
 PDF export enabled
-Hi everyone, I enabled the PDF exporting feature on the platform as requested. Hope it comes handy for you :)
+Hi everyone, I enabled the PDF exporting feature on the platform as requested.
+Hope it comes handy for you :)
 
-I’m not sure if the menu item for PDF export works, but you can export the PDFs by appending /pdf to the URL of your note.
+I’m not sure if the menu item for PDF export works,
+but you can export the PDFs by appending /pdf to the URL of your note.
 
-That said, I got contacted by NCSC-FI as a whitehat hacker had reported a vulnerability in the PDF export feature of this application. I have no idea who the hacker is, as NCSC-FI doesn’t disclose that information. Not that it matters anyway…
+That said, I got contacted by NCSC-FI as a whitehat hacker had reported a vulnerability in the PDF export feature of this application.
+I have no idea who the hacker is, as NCSC-FI doesn’t disclose that information.
+Not that it matters anyway…
 
-They said the vulnerability was called something like SSRF or something. I have no idea how that all works and I really can’t be bothered to fix the issue even though they provided me with instructions to do that. Instead, I moved the file on the server containing the sensitive information to /flag.txt. I’m sure it’s safe now.
+They said the vulnerability was called something like SSRF or something.
+I have no idea how that all works and I really can’t be bothered to fix the issue even though they provided me with instructions to do that.
+Instead, I moved the file on the server containing the sensitive information to /flag.txt.
+I’m sure it’s safe now.
 ```
 
 Lets do a google search for known vulnerabilities. Lets type in `hack-md vulnerabilities` and see the results.
@@ -1706,7 +1726,7 @@ We scroll down a bit more and we find out we're able to download the certificate
 
 Lets do exactly that and then lets try something with OpenSSL. Lets use ```openssl s_client -connect aapoweb.challenge.fi:8008 -cert aapoweb.pem```
 
-```
+```bash
 $ openssl s_client -connect aapoweb.challenge.fi:8008 -cert aapoweb.pem
 unable to load client certificate private key file
 140353543775552:error:0909006C:PEM routines:get_name:no start line:../crypto/pem/pem_lib.c:745:Expecting: ANY PRIVATE KEY
@@ -1747,7 +1767,7 @@ Email Address []:
 
 Now we're done with that lets connect with openssl again using our new privatekey and certificate.
 
-```
+```bash
 $ openssl s_client -connect aapoweb.challenge.fi:8008 -cert aapoweb.crt -key aapoweb.key 
 CONNECTED(00000003)
 depth=0 C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
@@ -1838,13 +1858,15 @@ There we go!
 ```
 Difficulty: Hard (?)
 
-The development team has made a proof of concept of the new Securelogin site. Somebody managed to put it to the public internet, but dev team is so confident that they don't think it matters so they left it open!
+The development team has made a proof of concept of the new Securelogin site.
+Somebody managed to put it to the public internet, but dev team is so confident that they don't think it matters so they left it open!
 
 Can you prove them wrong?! Are you the one who fetches the flag from /etc/flag.txt - file?
 
 You can find the challenge from: http://securelogin.challenge.fi:8880/
 
-Note: This challenge is based on a real world example of a finding from a bug bounty target. Pretty much 1=1, but some clues maybe around what to do...
+Note: This challenge is based on a real world example of a finding from a bug bounty target.
+Pretty much 1=1, but some clues maybe around what to do...
 ```
 
 This one was actually very difficult, no hints whatsoever. No indication where to begin except the website. Took me over 2 days to figure this one out, but I'll try to keep it short.
