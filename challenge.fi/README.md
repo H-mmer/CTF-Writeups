@@ -70,7 +70,10 @@ Our first challenge is to decrypt that string. We see the string is base64 encod
 
 `echo RkxBR3tMb29rc19yZWFsbHlfY3J5cHRpY19idXRfaXNfZWFzaWx5X3JldmVyc2VkfQ== | base64 -d`
 
->! FLAG{Looks_really_cryptic_but_is_easily_reversed}
+<details>
+  <summary>FLAG</summary>
+FLAG{Looks_really_cryptic_but_is_easily_reversed}
+</details>
 
 ### 2.2 Basic Ciphers
 
@@ -89,7 +92,10 @@ Lets pop that terminal open again and use this little script that rotates the al
 echo SYNT{jryy_guvf_jnf_rnfl} | tr '[a-m][n-z][A-M][N-Z]' '[n-z][a-m][N-Z][A-M]'
 ```
 
->! FLAG{well_this_was_easy}
+<details>
+  <summary>FLAG</summary>
+FLAG{well_this_was_easy}
+</details>
 
 ### 2.3 I want to see more, see more and see more
 
@@ -115,7 +121,10 @@ $ echo 1101 1011 10 001 000111 110010 0111 1 1 1001 110010 0111 000 000 1001 110
 
 Now we need to change that Morse code into something we can read so we fireup [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Morse_Code('Space','Line%20feed')) and we load our morse code in there and vóila we got a flag.
 
->! FLAG:_BEEP_BOOP_BEEP_BEEP_BOOP_MULTIPLE_LAYERS_ON_TOP_OF_EACH_OTHER
+<details>
+  <summary>FLAG</summary>
+  FLAG:_BEEP_BOOP_BEEP_BEEP_BOOP_MULTIPLE_LAYERS_ON_TOP_OF_EACH_OTHER
+</details>
 
 ## 3. OSINT
 
@@ -140,7 +149,11 @@ We get a picture from some random location. Ok, let's see what the hints give us
  2. The castle in the picture is called Castelo de San Jorge.
  3. It's not the bigger street, it's the even smaller alley.
 
-Let's try [google reverse image search](https://www.google.com/imghp?hl=EN). No results. Okay no worries, let's try [Tineye](https://tineye.com/). No results. Let's take on [Google maps](https://google.com/maps) and search for Castelo de San Jorge, lets turn on satellite imaging so we can actually see some buildings and lets roll into 3D mode and try to place ourselves on the exact same position as where the picture was taken. Now [this](https://www.google.com/maps/place/Castelo+de+S.+Jorge/@38.7194273,-9.1346289,38a,35y,178.13h,79.21t/data=!3m1!1e3!4m5!3m4!1s0xd193477b40ec39b:0xb4c0704199e433d7!8m2!3d38.7139092!4d-9.1334762) looks familiar. Little fidgeting and we have the correct street address: >! Escadinhas das Olarias
+Let's try [google reverse image search](https://www.google.com/imghp?hl=EN). No results. Okay no worries, let's try [Tineye](https://tineye.com/). No results. Let's take on [Google maps](https://google.com/maps) and search for Castelo de San Jorge, lets turn on satellite imaging so we can actually see some buildings and lets roll into 3D mode and try to place ourselves on the exact same position as where the picture was taken. Now [this](https://www.google.com/maps/place/Castelo+de+S.+Jorge/@38.7194273,-9.1346289,38a,35y,178.13h,79.21t/data=!3m1!1e3!4m5!3m4!1s0xd193477b40ec39b:0xb4c0704199e433d7!8m2!3d38.7139092!4d-9.1334762) looks familiar. Little fidgeting and we have the correct street address: 
+<details>
+  <summary>FLAG</summary>
+  Escadinhas das Olarias
+</details>
 
 ### 3.3 OSINT: Social Media 1
 
@@ -315,8 +328,12 @@ Thou shall not pass?
  Kissa123
 Thy password: Kissa123
 Thy answer has been accepted! Here is the wisdom for thy benefit.
-FLAG{ROTWasHere2021}
 ```
+
+<details>
+  <summary>FLAG</summary>
+FLAG{ROTWasHere2021}
+</details>
 
 ### 4.2 Deep inside ones and zeros
 
@@ -371,9 +388,14 @@ Thou shall not pass?
  ThknsfUrkbt
 Thy password: ThknsfUrkbt
 Thy answer has been accepted! Here is the wisdom for thy benefit.
-FLAG{DecompileLikeAPro}
+<flag>
 Psst. Solita is recruiting, wink wink ;-)
 ```
+
+<details>
+  <summary>FLAG</summary>
+  FLAG{DecompileLikeAPro}
+</details>
 
 ## 5. Steganography
 
@@ -554,8 +576,11 @@ Lets rename the file into .png and open it up
 $ mv decrypted_data decrypted_data.png
 ```
 
+<details>
+  <summary>FLAG</summary>
 ![decrypted_data](./crypto/crypto1/decrypted_data.png)
-
+</details>
+  
 ### 6.2 Catch the criminal 2
 
 ```
@@ -733,8 +758,12 @@ $ mv decrypted_data decrypted_data.png
 ```
 
 And there we go we got the flag!
-![crypto2](./crypto/crypto2/crypto2.png)
 
+<details>
+  <summary>FLAG</summary>
+![crypto2](./crypto/crypto2/crypto2.png)
+</details>
+  
 P.S this can also be done with [CyberChef](https://gchq.github.io/CyberChef/#recipe=XOR(%7B'option':'Hex','string':'55aa332211449988eeff66cc2277aa55'%7D,'Standard',false)XOR(%7B'option':'Hex','string':'55'%7D,'Standard',false)XOR(%7B'option':'Hex','string':'aa'%7D,'Standard',false)) the link provides 3 xor rounds first one with the entire 16byte key `55aa332211449988eeff66cc2277aa55` and 2 others 2nd with key `55` and 3rd with key `aa`, just input the encrypted_data and download the file and name it download.png
 
 ## 7. Cheating
@@ -840,8 +869,11 @@ Line: 137                        )
 
 Now the client doesn't do a check if we have more than 0 ammo and should let us shoot infinitely. Save the file and lets try it out. Launch the client again `python3 client.py` and start shooting. Yes it works! but we didn't get achievement because we're not in the correct server, lets change that. Lets comment `line 113` and uncomment the `line 114` now we can connect to the CTF hosted challenge server. Fire up the client again and go shooting.
 
+<details>
+  <summary>FLAG</summary>
 ![pewpew](./cheating/pewpew.png)
-
+</details>
+  
 ### 7.2 Project Kyyber 2021 part 2
 
 ```
@@ -895,7 +927,10 @@ Back in the `client.py` change we add a new sendevent in our jump function like 
 
 That should do it, lets try it!
 
+<details>
+  <summary>FLAG</summary>
 ![noroof](./cheating/noroof.png)
+</details>
 
 SUCCESS!
 
@@ -1032,8 +1067,11 @@ Line 131:                    sendevent.append(["left"])
 
 Now they will follow us around and shoot continuously. You can adjust where they shoot with your mouse once you start the botclient. To start the botclient you use `python3 botclient.py 18350961928273032797` for example. The master_id will be printed in our `client.py` start console.
 Now lets create some botclients and go kill that boss! Aaaaand its done!
-![bosskiller](./cheating/bosskiller.png)
 
+<details>
+  <summary>FLAG</summary>
+![bosskiller](./cheating/bosskiller.png)
+</details>
 ## 8. Cloud
 
 ### 8.1 AWS Challenge 1
@@ -1168,11 +1206,16 @@ Still remember our hint for the challenge? Thats a S3 Bucket address. Lets take 
 
 Looks like we found ourselves a flag!
 
-```bash
-$ curl https://frk-bucket-challenge-1234.s3.amazonaws.com/settings/stuff/flag.txt
-FLAG{jAnu6QLYjcmotXMUCmxfjW1Td3z6HD74EMTPuYHvdjtY3Dfyy8TUF7NFatasb1}
-```
+<details>
+  <summary>FLAG</summary>
 
+  ```bash
+  $ curl https://frk-bucket-challenge-1234.s3.amazonaws.com/settings/stuff/flag.txt
+  FLAG{jAnu6QLYjcmotXMUCmxfjW1Td3z6HD74EMTPuYHvdjtY3Dfyy8TUF7NFatasb1}
+  ```
+
+</details>
+  
 ### 8.2 AWS Challenge 2
 
 ```
@@ -1262,10 +1305,15 @@ drwxr-xr-x  4    0    0   4096 Mar 10 14:09 ..
 -rw-r--r--  1 1001 1002   3771 Mar 10 14:09 .bashrc
 -rw-r--r--  1 1001 1002    807 Mar 10 14:09 .profile
 -r--r-----+ 1 1001 1001     62 Mar 10 14:45 .secret
-
-$ cat .secret
-FLAG{2ChyDuRe7CyFLLHC6mC18KpCwVt7wEiKzD2gZa0ePLka3GJiP2chHtg}
 ```
+
+<details>
+  <summary>FLAG</summary>
+  ```bash
+  $ cat .secret
+  FLAG{2ChyDuRe7CyFLLHC6mC18KpCwVt7wEiKzD2gZa0ePLka3GJiP2chHtg}
+  ```
+</details>
 
 Got it!
 
