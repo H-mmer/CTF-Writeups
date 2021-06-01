@@ -70,7 +70,7 @@ Our first challenge is to decrypt that string. We see the string is base64 encod
 
 `echo RkxBR3tMb29rc19yZWFsbHlfY3J5cHRpY19idXRfaXNfZWFzaWx5X3JldmVyc2VkfQ== | base64 -d`
 
-FLAG{Looks_really_cryptic_but_is_easily_reversed}
+>! FLAG{Looks_really_cryptic_but_is_easily_reversed}
 
 ### 2.2 Basic Ciphers
 
@@ -89,7 +89,7 @@ Lets pop that terminal open again and use this little script that rotates the al
 echo SYNT{jryy_guvf_jnf_rnfl} | tr '[a-m][n-z][A-M][N-Z]' '[n-z][a-m][N-Z][A-M]'
 ```
 
-FLAG{well_this_was_easy}
+>! FLAG{well_this_was_easy}
 
 ### 2.3 I want to see more, see more and see more
 
@@ -115,7 +115,7 @@ $ echo 1101 1011 10 001 000111 110010 0111 1 1 1001 110010 0111 000 000 1001 110
 
 Now we need to change that Morse code into something we can read so we fireup [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Morse_Code('Space','Line%20feed')) and we load our morse code in there and vóila we got a flag.
 
-FLAG:_BEEP_BOOP_BEEP_BEEP_BOOP_MULTIPLE_LAYERS_ON_TOP_OF_EACH_OTHER
+>! FLAG:_BEEP_BOOP_BEEP_BEEP_BOOP_MULTIPLE_LAYERS_ON_TOP_OF_EACH_OTHER
 
 ## 3. OSINT
 
@@ -140,7 +140,7 @@ We get a picture from some random location. Ok, let's see what the hints give us
  2. The castle in the picture is called Castelo de San Jorge.
  3. It's not the bigger street, it's the even smaller alley.
 
-Let's try [google reverse image search](https://www.google.com/imghp?hl=EN). No results. Okay no worries, let's try [Tineye](https://tineye.com/). No results. Let's take on [Google maps](https://google.com/maps) and search for Castelo de San Jorge, lets turn on satellite imaging so we can actually see some buildings and lets roll into 3D mode and try to place ourselves on the exact same position as where the picture was taken. Now [this](https://www.google.com/maps/place/Castelo+de+S.+Jorge/@38.7194273,-9.1346289,38a,35y,178.13h,79.21t/data=!3m1!1e3!4m5!3m4!1s0xd193477b40ec39b:0xb4c0704199e433d7!8m2!3d38.7139092!4d-9.1334762) looks familiar. Little fidgeting and we have the correct street address: Escadinhas das Olarias
+Let's try [google reverse image search](https://www.google.com/imghp?hl=EN). No results. Okay no worries, let's try [Tineye](https://tineye.com/). No results. Let's take on [Google maps](https://google.com/maps) and search for Castelo de San Jorge, lets turn on satellite imaging so we can actually see some buildings and lets roll into 3D mode and try to place ourselves on the exact same position as where the picture was taken. Now [this](https://www.google.com/maps/place/Castelo+de+S.+Jorge/@38.7194273,-9.1346289,38a,35y,178.13h,79.21t/data=!3m1!1e3!4m5!3m4!1s0xd193477b40ec39b:0xb4c0704199e433d7!8m2!3d38.7139092!4d-9.1334762) looks familiar. Little fidgeting and we have the correct street address: >! Escadinhas das Olarias
 
 ### 3.3 OSINT: Social Media 1
 
@@ -909,8 +909,27 @@ Alrighty then time to get those bigboy pants and see what we're up against. Lets
 
 ![bossfound](./cheating/bossfound.png)
 
-Boss was found and when we landed we got killed pretty much instantly. Hmmmm, how do we proceed from this?
-Well first off we might want to shoot automatically so we dont need to click all the time. Lets do that first.
+Boss was found and when we landed we got killed pretty much instantly. Hmmmm, how do we proceed from this? The boss seems to have some sort of Forcefield and after going to the boss again and trying to shoot it nothing seems to hit the boss. Let's check out the source once more and see whats going on.
+
+```py
+216                         for boss in gamestate.bosses:
+217                             if distance(projectile, boss) < 10:
+218                                 boss.hp -= 1
+219                                 gamestate.projectiles.remove(projectile)
+220                                 break
+221                             # Forcefield
+222                             if (
+223                                 distance(projectile, boss)
+224                                 < boss.hitbox / 2 + projectile.hitbox / 2
+225                             ):
+226                                 gamestate.projectiles.remove(projectile)
+227                                 break
+```
+
+Thats under `common.py` physics function. This line `distance(projectile, boss) < boss.hitbox / 2 + projectile.hitbox / 2` creates the forcefield around the boss.
+We can see from `objects.py` that the `boss.hitbox` is 90 and `projectile.hitbox` is 30 and doing some simple math 90/2=45 + 30/2=15 = 60. So everything in the range of 10-60 from the boss gets removed. So basically this means we need to be withing 10(pixels?) of the boss to actually be able to hit him. Alright now we know what to do so let's start!
+
+First off we might want to shoot automatically so we dont need to click all the time. Lets do that first.
 
 We copy lines lines 130-137 to under `if me: on line 123`. We do this because `if me:` doesnt have any type of event checks unlike the original position. Now it just shoots if player exists.
 
