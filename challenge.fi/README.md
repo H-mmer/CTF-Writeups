@@ -578,7 +578,10 @@ $ mv decrypted_data decrypted_data.png
 
 <details>
   <summary>FLAG</summary>
-![decrypted_data](./crypto/crypto1/decrypted_data.png)
+  
+  ![decrypted_data](./crypto/crypto1/decrypted_data.png)
+  <img src="./crypto/crypto1/decrypted_data.png">
+  
 </details>
   
 ### 6.2 Catch the criminal 2
@@ -761,7 +764,10 @@ And there we go we got the flag!
 
 <details>
   <summary>FLAG</summary>
-![crypto2](./crypto/crypto2/crypto2.png)
+  
+  ![crypto2](./crypto/crypto2/crypto2.png)
+  <img src="./crypto/crypto2/crypto2.png">
+  
 </details>
   
 P.S this can also be done with [CyberChef](https://gchq.github.io/CyberChef/#recipe=XOR(%7B'option':'Hex','string':'55aa332211449988eeff66cc2277aa55'%7D,'Standard',false)XOR(%7B'option':'Hex','string':'55'%7D,'Standard',false)XOR(%7B'option':'Hex','string':'aa'%7D,'Standard',false)) the link provides 3 xor rounds first one with the entire 16byte key `55aa332211449988eeff66cc2277aa55` and 2 others 2nd with key `55` and 3rd with key `aa`, just input the encrypted_data and download the file and name it download.png
@@ -871,7 +877,10 @@ Now the client doesn't do a check if we have more than 0 ammo and should let us 
 
 <details>
   <summary>FLAG</summary>
-![pewpew](./cheating/pewpew.png)
+  
+  ![pewpew](./cheating/pewpew.png)
+  <img src="./cheating/pewpew.png">
+
 </details>
   
 ### 7.2 Project Kyyber 2021 part 2
@@ -929,7 +938,10 @@ That should do it, lets try it!
 
 <details>
   <summary>FLAG</summary>
-![noroof](./cheating/noroof.png)
+  
+  ![noroof](./cheating/noroof.png)
+  <img src="./cheating/noroof.png">
+  
 </details>
 
 SUCCESS!
@@ -1070,7 +1082,10 @@ Now lets create some botclients and go kill that boss! Aaaaand its done!
 
 <details>
   <summary>FLAG</summary>
-![bosskiller](./cheating/bosskiller.png)
+  
+  ![bosskiller](./cheating/bosskiller.png)
+  <img src="./cheating/bosskiller.png">
+  
 </details>
 ## 8. Cloud
 
@@ -1309,10 +1324,12 @@ drwxr-xr-x  4    0    0   4096 Mar 10 14:09 ..
 
 <details>
   <summary>FLAG</summary>
+  
   ```bash
   $ cat .secret
   FLAG{2ChyDuRe7CyFLLHC6mC18KpCwVt7wEiKzD2gZa0ePLka3GJiP2chHtg}
   ```
+  
 </details>
 
 Got it!
