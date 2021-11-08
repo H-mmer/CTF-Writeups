@@ -17,9 +17,11 @@ apt install ftp
 
 ##### Re-return (the kernel module)
 After clearing out other challenges we came back to this and realized that there's some unintended kernel pwn/docker escape challenge. Fredd found out through `capsh` that there's a `cap_sys_module` which allows you to load arbitary kernel modules which would allow us to do anything in the host kernel.
+
 <img src="img/img3.png" height=300px width=700px>
 
 Fredd went on to write a kernel module to exploit that **BUT** that didn't work since there was [additional protection](https://kernel.org/doc/html/latest/admin-guide/LSM/LoadPin.html) methods inside that specific kernel.
+
 ![img5](img/img5.png)
 ![img6](img/img6.png)
 ![img4](img/img4.png)
@@ -28,6 +30,7 @@ Fredd went on to write a kernel module to exploit that **BUT** that didn't work 
  So after that we went on to try a container escape [with this](https://blog.trailofbits.com/2019/07/19/understanding-docker-container-escapes/). After running the PoC we were inside the kubernetes node.
  The node was read-only filesystem and we couldn't run `kubectl get pods` straight away.
  Instead what we did was we started digging around the googleclouds computeMetadata and shortly after we found the service account token which we then used to retrieve all the artifacts from their storage.
+ 
  ![img2](img/img2.png)
  
  Command we used to download all the artifacts:
@@ -37,6 +40,7 @@ Fredd went on to write a kernel module to exploit that **BUT** that didn't work 
  After we got all the files we kinda wanted to get the actual access to the kubernetes pods and we figured out a way to do that by finding kubelet config file in `/var/lib/kubelet/kubeconfig`, after some googling found out that `kubectl` stores its config in `~/.kube/config` so by setting `$HOME` directory for the root user in `/dev/shm` which was writable(is by default) and copying the `/var/lib/kubelet/kubeconfig` into our new home directory.
  `mkdir ~/.kube && cp /var/lib/kubelet/kubeconfig ~/.kube/config`
 After that we were able to run any kubectl command.
+
 <img src="img/img1.png">
 
 ##### Report to organizers
